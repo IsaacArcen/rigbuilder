@@ -5,6 +5,7 @@ const componentSlots = [
   "RAM",
   "Storage",
   "Cooling",
+  "Case",
   "Extra",
 ];
 
