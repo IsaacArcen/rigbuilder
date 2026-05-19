@@ -18,7 +18,7 @@ function Homepage() {
 //BuilderPage
 function BuilderPage() {
   return (
-    <main className="homepage">
+    <main className="app-page app-page--background">
       <Navbar />
       <Builder />
     </main>

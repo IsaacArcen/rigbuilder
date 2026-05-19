@@ -78,6 +78,21 @@ body {
   display: block;
 }
 
+/* Gemensam layout för sidor efter startsidan */
+.app-page {
+  min-height: 100vh;
+  background-color: #070707;
+  color: #f3f3f3;
+}
+
+/* Bakgrund som används på builder och andra undersidor */
+.app-page--background {
+  background-image: url("./assets/images/PageBackground.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 /* Hero-sektionen fyller resten av första vyn under navbaren */
 .hero {
   position: relative;
@@ -95,11 +110,23 @@ body {
       rgba(7, 7, 7, 0.25) 65%,
       rgba(7, 7, 7, 0) 100%
     ),
-    url("./assets/images/HeroPc.png");
+    url("./assets/images/HeroPc.png"),
+    url("./assets/images/PageBackground.png");
 
-  background-size: auto 100%;
-  background-position: right center;
-  background-repeat: no-repeat;
+ background-size:
+  cover,
+  auto 90%,
+  cover;
+
+background-position:
+  center,
+  right center,
+  center;
+
+background-repeat:
+  no-repeat,
+  no-repeat,
+  no-repeat;
 }
 
 .hero__content {
@@ -221,7 +248,6 @@ body {
 /* Builder-sektionen visar de komponenter användaren kan välja */
 .builder {
   padding: 96px clamp(24px, 6vw, 96px);
-  background-color: #070707;
   color: #f3f3f3;
 }
 
@@ -259,9 +285,10 @@ body {
   flex-direction: column;
   justify-content: space-between;
   padding: 22px;
-  border: 1px solid rgba(243, 243, 243, 0.18);
+  border: 1px solid rgba(243, 243, 243, 0.22);
   border-radius: 6px;
-  background-color: rgba(255, 255, 255, 0.035);
+  background-color: rgba(7, 7, 7, 0.58);
+  backdrop-filter: blur(8px);
 }
 
 /* Övre delen av kortet med namn och status */
