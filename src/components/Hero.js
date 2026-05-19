@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 //Hero
 
 function Hero() {
@@ -19,13 +19,13 @@ function Hero() {
                 {/* knappar */}
                 {/* knapp 1 : build your pc */}
                 <div className="hero__buttons">
-                    <a href="/builder" className="hero__button hero__button-primary">
-                    Build your PC
-                    </a>
+                    <Link to="/builder" className="hero__button hero__button-primary">
+                        Build your PC
+                    </Link>
                     {/* knapp 2 : view complete pcs */}
-                    <a href="/complete-pcs" className="hero__button hero__button-secondary">
+                    <Link to="/complete-pcs" className="hero__button hero__button-secondary">
                         View Complete PCs
-                    </a>
+                    </Link>
                 </div>
             </div>
         </section>
