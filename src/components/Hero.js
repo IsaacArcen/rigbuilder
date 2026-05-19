@@ -1,4 +1,4 @@
-import heroPc from "../assets/images/HeroPc.png";
+
 //Hero
 
 function Hero() {
@@ -27,15 +27,6 @@ function Hero() {
                         View Complete PCs
                     </a>
                 </div>
-            </div>
-
-                {/* bild */}
-            <div className="hero__image">
-                <img
-                     src={heroPc}
-                     alt="Black gaming computer with illuminated fans"
-                    className="hero__image"
-                />
             </div>
         </section>
     );

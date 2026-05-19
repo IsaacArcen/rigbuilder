@@ -74,40 +74,52 @@ body {
   cursor: pointer;
 }
 
-/* Hero-sektionen som visas under navbaren */
+/* Hero-sektionen fyller resten av första vyn under navbaren */
 .hero {
+  position: relative;
   min-height: calc(100vh - 120px);
-  display: grid;
-  grid-template-columns: 42% 58%;
+  display: flex;
   align-items: center;
   padding: 32px 72px 72px;
   overflow: hidden;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(7, 7, 7, 0.92) 0%,
+      rgba(7, 7, 7, 0.75) 35%,
+      rgba(7, 7, 7, 0.25) 65%,
+      rgba(7, 7, 7, 0) 100%
+    ),
+    url("./assets/images/HeroPc.png");
+
+  background-size: auto 100%;
+  background-position: center right;
+  background-repeat: no-repeat;
 }
 
-/* Vänstra delen med rubrik, text och knappar */
 .hero__content {
+  position: relative;
   max-width: 430px;
-  z-index: 1;
+  z-index: 2;
 }
-/* Stor titel */
+
 .hero__content h1 {
   margin: 0 0 28px;
-  color: #F3F3F3;
+  color: #f3f3f3;
   font-size: 30px;
   line-height: 1.25;
   font-weight: 400;
 }
 
-/* brödtext */
 .hero__content p {
-  max-width: 330px;
+  max-width: 340px;
   margin: 0 0 56px;
-  color: #F3F3F3;
+  color: #f3f3f3;
   font-size: 15px;
   line-height: 1.45;
 }
 
-/* knappar */
 .hero__buttons {
   display: flex;
   align-items: center;
@@ -115,8 +127,8 @@ body {
 }
 
 .hero__button {
-  min-width: 144px;
-  min-height: 30px;
+  min-width: 148px;
+  height: 31px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -126,34 +138,17 @@ body {
   text-decoration: none;
   font-size: 10px;
   line-height: 1;
+  cursor: pointer;
 }
 
-/* första knappen */
-.hero__button--primary {
-  background-color: #ffffff;
-  border: 1px solid #ffffff;
+.hero__button-primary {
+  background-color: #f3f3f3;
+  border: 1px solid #f3f3f3;
   color: #070707;
 }
 
-/* andra knappen */
-.hero__button--secondary {
+.hero__button-secondary {
   background-color: transparent;
-  border: 1px solid #ffffff;
-  color: #ffffff;
-}
-
-/* högra del med bild */
-.hero__image-wrapper {
-  position: relative;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-/* Själva datorbilden */
-.hero__image {
-  width: min(720px, 100%);
-  height: auto;
-  object-fit: contain;
+  border: 1px solid #f3f3f3;
+  color: #f3f3f3;
 }
