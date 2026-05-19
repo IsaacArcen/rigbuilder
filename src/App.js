@@ -1,6 +1,7 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import Builder from "./components/Builder";
 
 // App är huvudkomponenten som bygger upp sidans övergripande layout.
 function App() {
@@ -12,6 +13,8 @@ function App() {
 
         {/* Hero */}
         <Hero />
+        {/* Builder */}
+        <Builder />
       </main>
     </div>
   );

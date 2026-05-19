@@ -19,11 +19,11 @@ function Hero() {
                 {/* knappar */}
                 {/* knapp 1 : build your pc */}
                 <div className="hero__buttons">
-                    <a href="/builder" className="hero__button-primary">
+                    <a href="/builder" className="hero__button hero__button-primary">
                     Build your PC
                     </a>
                     {/* knapp 2 : view complete pcs */}
-                    <a href="/complete-pcs" className="hero__button-secondary">
+                    <a href="/complete-pcs" className="hero__button hero__button-secondary">
                         View Complete PCs
                     </a>
                 </div>

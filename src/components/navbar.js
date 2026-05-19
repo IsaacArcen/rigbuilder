@@ -1,3 +1,5 @@
+import accountIcon from "../assets/icons/account.svg";
+import cartIcon from "../assets/icons/cart.svg";
 //Navbar-komponenten
 
 function Navbar() {
@@ -15,11 +17,11 @@ function Navbar() {
 
             <div className="navbar__actions">
                 <button className="navbar__icon-button" aria-label="Account">
-                    <span className="material-symbol">👤</span>
+                    <img src={accountIcon} alt="Account Icon" className="navbar__icon" />
                 </button>
              
                 <button className="navbar__icon-button" aria-label="Cart">
-                    <span className="material-symbol">🛒</span>
+                    <img src={cartIcon} alt="Cart Icon" className="navbar__icon" />
                 </button>
             </div>
         </header>
