@@ -22,6 +22,9 @@ function ComponentPage() {
     const [loading, setLoading] = useState(true);
     const [errorMessage, setErrorMessage] = useState("");
 
+    const [activeBrand, setActiveBrand] = useState("All");
+    const [searchTerm, setSearchTerm] = useState("");
+
     useEffect(() => {
     // Om kategorin inte finns behöver vi inte hämta produkter.
     if (!pageData) {
@@ -62,6 +65,17 @@ function ComponentPage() {
     );
   }
 
+const filteredProducts = products.filter((product) => {
+  const matchesBrand =
+    activeBrand === "All" || product.brand === activeBrand;
+
+  const matchesSearch =
+    product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    product.brand.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    product.specs.join(" ").toLowerCase().includes(searchTerm.toLowerCase());
+
+  return matchesBrand && matchesSearch;
+});
   return (
     <section className="component-page">
       <div className="component-page__header">
@@ -80,12 +94,41 @@ function ComponentPage() {
         <aside className="component-page__filters">
           <h2>Filters</h2>
 
-          <button>All</button>
-          <button>NVIDIA</button>
-          <button>AMD</button>
-          <button>Intel</button>
-          <button>Budget</button>
-          <button>High-End</button>
+          <input
+          className="component-page__search"
+          type="search"
+          placeholder="Search products"
+          value={searchTerm}
+          onChange={(event) => setSearchTerm(event.target.value)}
+          />
+
+          <button
+                className={activeBrand === "All" ? "is-active" : ""}
+                onClick={() => setActiveBrand("All")}
+                >
+                All
+                </button>
+
+                <button
+                className={activeBrand === "NVIDIA" ? "is-active" : ""}
+                onClick={() => setActiveBrand("NVIDIA")}
+                >
+                NVIDIA
+                </button>
+
+                <button
+                className={activeBrand === "AMD" ? "is-active" : ""}
+                onClick={() => setActiveBrand("AMD")}
+                >
+                AMD
+                </button>
+
+                <button
+                className={activeBrand === "Intel" ? "is-active" : ""}
+                onClick={() => setActiveBrand("Intel")}
+                >
+                Intel
+                </button>
         </aside>
 
         <div className="component-page__products">
@@ -93,13 +136,13 @@ function ComponentPage() {
 
           {!loading && errorMessage && <p>{errorMessage}</p>}
 
-          {!loading && !errorMessage && products.length === 0 && (
+          {!loading && !errorMessage && filteredProducts.length === 0 && (
             <p>No products found.</p>
           )}
 
           {!loading &&
             !errorMessage &&
-            products.map((product) => (
+            filteredProducts.map((product) => (
               <article className="product-card" key={product.id}>
                 <div className="product-card__image-placeholder">
                   {product.image ? (

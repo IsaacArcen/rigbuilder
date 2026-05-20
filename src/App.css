@@ -444,6 +444,33 @@ background-repeat:
   font-weight: 400;
 }
 
+.component-page__search {
+  width: 100%;
+  height: 38px;
+  margin-bottom: 18px;
+  padding: 0 12px;
+  border: 1px solid rgba(243, 243, 243, 0.22);
+  border-radius: 2px;
+  background-color: rgba(7, 7, 7, 0.55);
+  color: #f3f3f3;
+  font-family: inherit;
+  font-size: 9px;
+  outline: none;
+}
+
+.component-page__search::placeholder {
+  color: rgba(243, 243, 243, 0.45);
+}
+
+.component-page__search:focus {
+  border-color: rgba(243, 243, 243, 0.75);
+}
+
+.component-page__filters button.is-active {
+  background-color: #f3f3f3;
+  color: #070707;
+}
+
 .component-page__filters button {
   width: 100%;
   height: 34px;
