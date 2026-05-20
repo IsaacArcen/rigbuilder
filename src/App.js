@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Builder from "./components/Builder";
 import ComponentPage from "./pages/ComponentPage";
+import { BuildProvider } from "./context/BuildContext";
 
 
 //Homepage
@@ -30,13 +31,15 @@ function BuilderPage() {
 function App() {
   return (
     <BrowserRouter>
-    <div className="page">
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/builder" element={<BuilderPage />} />
-        <Route path="/builder/:category" element={<ComponentPage />} />
-      </Routes>
-    </div>
+    <BuildProvider>
+      <div className="page">
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/builder" element={<BuilderPage />} />
+          <Route path="/builder/:category" element={<ComponentTypePage />} />
+        </Routes>
+      </div>
+    </BuildProvider>
     </BrowserRouter>
   );
 }
