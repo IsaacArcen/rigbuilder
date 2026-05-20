@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const componentSlots = [
   "GPU",
   "CPU",
@@ -8,6 +10,12 @@ const componentSlots = [
   "Case",
   "Extra",
 ];
+
+// Gör om komponentens namn till en URL-vänlig text.
+const getComponentPath = (slot) => {
+  return slot.toLowerCase();
+};
+
 
 function Builder() {
     return (
@@ -25,13 +33,13 @@ function Builder() {
                             <span className="builder-card__status">Empty</span>
                         </div>
 
-                        <div className="builde-card__body">
+                        <div className="builder-card__body">
                             <span className="builder-card__plus">+</span>
                             </div>
 
-                        <button className="builder-card__button">
-                            Choose {slot}
-                        </button>
+                        <Link to={`/builder/${getComponentPath(slot)}`} className="builder-card__button">
+                            Select {slot}
+                        </Link>
                     </article>
                 ))}
             </div>

@@ -36,10 +36,31 @@ function ComponentPage() {
                     <button>All</button>
                     <button>NVIDIA</button>
                     <button>AMD</button>
+                    <button>Intel</button>
                     <button>Budget</button>
                     <button>High-End</button>
                 </aside>
+
+                <div className="component-page__products">
+                    <article className="product-card product-card--empty">
+                        <div className="product-card__image-placeholder">
+                            Product Image
+                        </div>
+
+                        <div className="product-card__content">
+                            <h3>GPU</h3>
+                            <p>Specs kommer här:</p>
+
+                            <div className="product-card__bottom">
+                                <span>0kr</span>
+                                <button>Select</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
             </div>
         </section>
-    )
+    );
 }
+
+export default ComponentPage;

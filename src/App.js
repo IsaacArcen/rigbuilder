@@ -3,6 +3,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Builder from "./components/Builder";
+import ComponentPage from "./pages/ComponentPage";
 
 
 //Homepage
@@ -33,6 +34,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/builder" element={<BuilderPage />} />
+        <Route path="/builder/:category" element={<ComponentPage />} />
       </Routes>
     </div>
     </BrowserRouter>
