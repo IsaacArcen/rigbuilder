@@ -19,7 +19,13 @@ const getComponentPath = (slot) => {
 
 
 function Builder() {
-  const { build, removeComponent } = useBuild();
+  const { build, removeComponent, clearBuild } = useBuild();
+
+  const selectedProducts = Object.values(build).filter(Boolean);
+
+  const totalPrice = selectedProducts.reduce((sum, product) => {
+    return sum + product.price;
+  }, 0);
 
   return (
     <section className="builder">
@@ -72,6 +78,37 @@ function Builder() {
             </article>
           );
         })}
+      </div>
+
+      <div className="builder-summary">
+        <div>
+            <span className="builder-summary__label">Selected components</span>
+            <strong>
+                {selectedProducts.length} / {componentSlots.length}
+            </strong>
+        </div>
+
+        <div>
+            <span className="builder-summary__label">Total</span>
+            <strong>{totalPrice} kr</strong>
+        </div>
+
+        <div className="builder-summary__actions">
+            <button
+            type="button"
+            className="builder-summary__button"
+            onClick={clearBuild}
+            >
+                Clear build
+            </button>
+
+            <Link
+            to="/cart"
+            className="builder-summary__button builder-summary__button-primary"
+            >
+                Go to cart
+            </Link>
+        </div>
       </div>
     </section>
   );
