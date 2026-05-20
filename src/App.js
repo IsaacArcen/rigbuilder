@@ -41,4 +41,14 @@ function App() {
   );
 }
 
+//ComponentPage
+function ComponentTypePage() {
+  return (
+    <main className="app-page app-page--background">
+      <Navbar />
+      <ComponentPage />
+    </main>
+  );
+}
+
 export default App;
