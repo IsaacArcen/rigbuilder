@@ -55,4 +55,13 @@ function ComponentTypePage() {
   );
 }
 
+function CartRoutePage() {
+  return (
+    <main className="app-page app-page--background">
+      <Navbar/>
+      <CartPage/>
+    </main>
+  );
+}
+
 export default App;
