@@ -38,6 +38,7 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/builder" element={<BuilderPage />} />
           <Route path="/builder/:category" element={<ComponentTypePage />} />
+          <Route path="/cart" element={<CartRoutePage />} />
         </Routes>
       </div>
     </BuildProvider>
