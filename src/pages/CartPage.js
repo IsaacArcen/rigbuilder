@@ -96,7 +96,7 @@ return (
                     <button
                     type="button"
                     className="cart-summary__clear"
-                    onClick={clearBuild}
+                    onClick={clearbuild}
                     >
                         Clear cart
                     </button>
