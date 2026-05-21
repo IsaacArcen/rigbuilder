@@ -5,6 +5,7 @@ import Hero from "./components/Hero";
 import Builder from "./components/Builder";
 import ComponentPage from "./pages/ComponentPage";
 import { BuildProvider } from "./context/BuildContext";
+import CartPage from "./pages/CartPage";
 
 
 //Homepage
