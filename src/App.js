@@ -39,6 +39,7 @@ function App() {
           <Route path="/builder" element={<BuilderPage />} />
           <Route path="/builder/:category" element={<ComponentTypePage />} />
           <Route path="/cart" element={<CartRoutePage />} />
+          <Route path="/cart" element={<CheckoutPage />} />
         </Routes>
       </div>
     </BuildProvider>
@@ -61,6 +62,15 @@ function CartRoutePage() {
     <main className="app-page app-page--background">
       <Navbar/>
       <CartPage/>
+    </main>
+  );
+}
+
+function CheckoutPage() {
+  return (
+    <main className="app-page app-page--background">
+      <Navbar/>
+      <CheckoutPage/>
     </main>
   );
 }
