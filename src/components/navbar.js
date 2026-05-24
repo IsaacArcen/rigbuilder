@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { use, useState } from "react";
 import { Link } from "react-router-dom";
 import { useBuild } from "../context/BuildContext";
 
@@ -18,31 +18,28 @@ const componentLabels = {
   extra: "Extra",
 };
 
-
 function Navbar() {
+    const [isCartOpen, setIsCartOpen] = useState(false);
+
+    const { build, removeComponent } = useBuild();
+
+    const selectedItems = Object.entries(build).filter(([, product]) => product);
+
+    const totalPrice = selectedItems.reduce((sum, [, product]) => {
+        return sum + product.price;
+    }, 0);
+
     return (
+        <>
         <header className="navbar">
-            <a href= "/" className="navbar__logo">
+            <Link to="/" className="navbar__logo">
             RigBuilder
-            </a>
+            </Link>
 
-            <nav className="navbar__links" aria-label="Main Navigation">
-                <a href="/">Home</a>
-                <a href="/about">About Us</a>
-                <a href="/contact">Contact</a>
-            </nav>
-
-            <div className="navbar__actions">
-                <button className="navbar__icon-button" aria-label="Account">
-                    <img src={accountIcon} alt="Account Icon" className="navbar__icon" />
-                </button>
-             
-                <button className="navbar__icon-button" aria-label="Cart">
-                    <img src={cartIcon} alt="Cart Icon" className="navbar__icon" />
-                </button>
-            </div>
+            
         </header>
-    );
+            </>
+    )
 }
 
 export default Navbar;
