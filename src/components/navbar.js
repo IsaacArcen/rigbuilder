@@ -6,6 +6,17 @@ import accountIcon from "../assets/icons/account.svg";
 import cartIcon from "../assets/icons/cart.svg";
 //Navbar-komponenten
 
+
+const componentLabels = {
+  gpu: "GPU",
+  cpu: "CPU",
+  motherboard: "Motherboard",
+  ram: "RAM",
+  storage: "Storage",
+  cooling: "Cooling",
+  case: "Case",
+  extra: "Extra",
+};
 function Navbar() {
     return (
         <header className="navbar">
