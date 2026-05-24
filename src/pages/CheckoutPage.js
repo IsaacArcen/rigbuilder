@@ -8,7 +8,7 @@ const componentLabels = {
     motherboard: "Motherboard",
     ram: "RAM",
     storage: "Storage",
-    coolong: "Cooling",
+    cooling: "Cooling",
     case: "Case",
     extra: "Extra",
 };
@@ -28,7 +28,7 @@ function CheckoutPage() {
         name: "",
         email: "",
         phone: "",
-        paymentmethod: "",
+        paymentMethod: "",
     });
 
     const [errorMessage, setErrorMessage] = useState("");
