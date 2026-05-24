@@ -36,7 +36,11 @@ function Navbar() {
             RigBuilder
             </Link>
 
-            
+            <nav className="navbar__links" aria-label="Main Navigation">
+                <Link to="/">Home</Link>
+                <Link to="/builder">Builder</Link>
+                <Link to="/contact">Contact</Link>
+            </nav>
         </header>
             </>
     )
