@@ -142,7 +142,28 @@ function CheckoutPage() {
                     </button>
                 </form>
 
-                
+                <aside className="checkout-summary">
+                    <h2>Order Summary</h2>
+
+                    {selectedItems.length === 0? (
+                        <p>No components selected.</p>
+                    ) : (
+                        <div className="checkout-summary__items">
+                            {selectedItems.map(([category, product]) => (
+                                <div className="checkout-summary__item" key={category}>
+                                    <span>{componentLabels[category] || category}</span>
+                                    <strong>{product.name}</strong>
+                                    <small>{product-price} kr</small>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+
+                    <div className="checkout-summary__total">
+                        <span>Total</span>
+                        <strong>{totalPrice} kr</strong>
+                    </div>
+                </aside>
             </div>
         </section>
     )
