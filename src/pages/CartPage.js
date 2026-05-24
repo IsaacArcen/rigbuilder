@@ -15,7 +15,7 @@ const componentLabels = {
 // Cartpage visar användarens komponenter innan checkout
 
 function CartPage() {
-    const {build, removeComponent, clearbuild} = useBuild();
+    const {build, removeComponent, clearBuild} = useBuild();
 
     const selectedItems = Object.entries(build).filter(([, product]) => product);
 
@@ -86,7 +86,7 @@ return (
 
                     <div className="cart-summary__row">
                         <span>Total</span>
-                        <strong>{totalPrice}</strong>
+                        <strong>{totalPrice} kr</strong>
                     </div>
 
                     <Link to="/checkout" className="cart-summary__checkout">
@@ -96,7 +96,7 @@ return (
                     <button
                     type="button"
                     className="cart-summary__clear"
-                    onClick={clearbuild}
+                    onClick={clearBuild}
                     >
                         Clear cart
                     </button>
