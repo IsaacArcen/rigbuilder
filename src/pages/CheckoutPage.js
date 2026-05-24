@@ -153,7 +153,7 @@ function CheckoutPage() {
                                 <div className="checkout-summary__item" key={category}>
                                     <span>{componentLabels[category] || category}</span>
                                     <strong>{product.name}</strong>
-                                    <small>{product-price} kr</small>
+                                    <small>{product.price} kr</small>
                                 </div>
                             ))}
                         </div>
@@ -166,5 +166,7 @@ function CheckoutPage() {
                 </aside>
             </div>
         </section>
-    )
+    );
 }
+
+export default CheckoutPage;

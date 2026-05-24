@@ -6,6 +6,7 @@ import Builder from "./components/Builder";
 import ComponentPage from "./pages/ComponentPage";
 import { BuildProvider } from "./context/BuildContext";
 import CartPage from "./pages/CartPage";
+import CheckoutPage from "./pages/CheckoutPage";
 
 
 //Homepage
@@ -39,7 +40,7 @@ function App() {
           <Route path="/builder" element={<BuilderPage />} />
           <Route path="/builder/:category" element={<ComponentTypePage />} />
           <Route path="/cart" element={<CartRoutePage />} />
-          <Route path="/cart" element={<CheckoutPage />} />
+          <Route path="/checkout" element={<CheckoutRoutePage />} />
         </Routes>
       </div>
     </BuildProvider>
@@ -66,7 +67,7 @@ function CartRoutePage() {
   );
 }
 
-function CheckoutPage() {
+function CheckoutRoutePage() {
   return (
     <main className="app-page app-page--background">
       <Navbar/>
