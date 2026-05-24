@@ -42,5 +42,108 @@ function CheckoutPage() {
         }));
     };
 
-    
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        if (selectedItems.length === 0) {
+            setErrorMessage("Your cart is empty.");
+            return;
+        }
+
+        setErrorMessage("");
+
+        console.log("Order ready to submit:", {
+            customer: formData,
+            items: selectedItems,
+            totalPrice,
+        });
+
+        //API senare
+    };
+
+    return (
+        <section className="checkout-page">
+            <div className="checkout-page__header">
+                <div>
+                    <p className="checkout-page__eyebrow">RigBuilder Checkout</p>
+                    <h1>Checkout</h1>
+                    <p>Fill in your details and choose a payment method.</p>
+                </div>
+
+                <Link to="/cart" className="checkout-page__back-button">
+                    Back to Cart
+                </Link>
+            </div>
+
+            <div className="checkout-page__layout">
+                <form className="checkout-form" onSubmit={handleSubmit}>
+                    <h2>Customer details</h2>
+
+                    <label>
+                        Name
+                        <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={inputChange}
+                        placeholder="Your name"/>
+                    </label>
+
+                        <label>
+                        Email
+                        <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={inputChange}
+                        placeholder="Your email"/>
+                    </label>
+
+                    <label>
+                        Phone
+                        <input
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={inputChange}
+                        placeholder="070 000 00 00"/>
+                    </label>
+
+                    <fieldset className="checkout-form__payment">
+                        <legend>Payment Method</legend>
+
+                        <label>
+                        <input
+                        type="radio"
+                        name="paymentMethod"
+                        value= "card"
+                        checked={formData.paymentMethod === "card"}
+                        onChange={inputChange}/>
+                        Card
+                    </label>
+
+                    <label>
+                        <input
+                        type="radio"
+                        name="paymentMethod"
+                        value= "swish"
+                        checked={formData.paymentMethod === "swish"}
+                        onChange={inputChange}/>
+                        Swish
+                    </label>
+                    </fieldset>
+
+                    {errorMessage && (
+                        <p className="checkout-form__error">{errorMessage}</p>
+                    )}
+
+                    <button type="submit" className="checkout-form__submit">
+                        Place Order
+                    </button>
+                </form>
+
+                
+            </div>
+        </section>
+    )
 }
