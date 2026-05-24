@@ -17,6 +17,8 @@ const componentLabels = {
   case: "Case",
   extra: "Extra",
 };
+
+
 function Navbar() {
     return (
         <header className="navbar">
