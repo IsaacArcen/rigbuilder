@@ -16,7 +16,9 @@ const componentLabels = {
 //Checkoutsidan med formulär för kunduppgifter
 function CheckoutPage() {
 
-    const { build } = useBuild();
+    const { build, clearBuild } = useBuild();
+
+    const navigate = useNavigate();
 
     const selectedItems = Object.entries(build).filter(([, product]) => product);
 
