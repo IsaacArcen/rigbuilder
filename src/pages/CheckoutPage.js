@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useBuild } from "../context/BuildContext";
+import { clear } from "@testing-library/user-event/dist/clear";
 
 const componentLabels = {
     gpu: "GPU",
@@ -44,9 +45,11 @@ function CheckoutPage() {
         }));
     };
 
+    //användare klickar "Place Order"
     const handleSubmit = (event) => {
         event.preventDefault();
 
+        //if cases
         if (selectedItems.length === 0) {
             setErrorMessage("Your cart is empty.");
             return;
@@ -58,6 +61,7 @@ function CheckoutPage() {
         }
         setErrorMessage("");
 
+        //Bygger order-objekt som skickas till backend
         const orderData = {
             customer: formData,
             items: selectedItems.map(([, product]) => product),
@@ -65,16 +69,34 @@ function CheckoutPage() {
         };
 
         try {
-            const response
+            //skickar ordern till backends endpoint för orders
+            const response = await fetch("http://localhost:5000/api/orders", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(orderData),
+            });
+
+            //vid felstatus stoppas det och visar felmeddelande
+            if (!response.ok) {
+                throw new Error("Could not create order");
+            }
+
+            //läser ordern som skapades och skickar tillbaka
+            const createdOrder = await response.json();
+
+            clearBuild();
+
+            //tar user till confirmationPage.js
+            navigate("/confirmation", {
+                state: {
+                    order: createdOrder,
+                },
+            });
+        } catch (error) {
+            setErrorMessage(errorMessage);
         }
-
-        console.log("Order ready to submit:", {
-            customer: formData,
-            items: selectedItems,
-            totalPrice,
-        });
-
-        //API senare
     };
 
     return (
