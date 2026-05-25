@@ -1,1 +1,28 @@
-[]
+[
+  {
+    "id": "order-1779723568112",
+    "customer": {
+      "name": "Test User",
+      "email": "test@example.com",
+      "phone": "0700000000",
+      "paymentMethod": "card"
+    },
+    "items": [
+      {
+        "id": "gpu-rtx-4070-super",
+        "category": "gpu",
+        "name": "GeForce RTX 4070 Super",
+        "brand": "NVIDIA",
+        "price": 7490,
+        "image": "",
+        "specs": [
+          "12GB GDDR6X",
+          "PCIe 4.0",
+          "1440p gaming"
+        ]
+      }
+    ],
+    "totalPrice": 7490,
+    "createdAt": "2026-05-25T15:39:28.112Z"
+  }
+]

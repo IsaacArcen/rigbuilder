@@ -59,6 +59,16 @@ const createOrder = asyncHandler(async (req, res) => {
     res.status(201).json(newOrder);
 });
 
+// @desc Get all orders
+// @route GET /api/orders
+// @access public nu, protected senare
+
+//getOrders hämtar alla sparade orders
+const getOrders = asyncHandler(async (req, res) => {
+    const orders = readOrders();
+    res.status(200).json(orders);
+});
+
 //Exporta så orderRoutes.js kan använda funktionerna
 module.exports = {
     createOrder,
