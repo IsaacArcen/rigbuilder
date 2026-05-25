@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useBuild } from "../context/BuildContext";
-import { clear } from "@testing-library/user-event/dist/clear";
 
 const componentLabels = {
     gpu: "GPU",
@@ -46,7 +45,7 @@ function CheckoutPage() {
     };
 
     //användare klickar "Place Order"
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
         //if cases
@@ -95,7 +94,7 @@ function CheckoutPage() {
                 },
             });
         } catch (error) {
-            setErrorMessage(errorMessage);
+            setErrorMessage(error.message);
         }
     };
 
