@@ -58,6 +58,16 @@ function CheckoutPage() {
         }
         setErrorMessage("");
 
+        const orderData = {
+            customer: formData,
+            items: selectedItems.map(([, product]) => product),
+            totalPrice,
+        };
+
+        try {
+            const response
+        }
+
         console.log("Order ready to submit:", {
             customer: formData,
             items: selectedItems,
