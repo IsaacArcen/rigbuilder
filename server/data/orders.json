@@ -24,5 +24,44 @@
     ],
     "totalPrice": 7490,
     "createdAt": "2026-05-25T15:39:28.112Z"
+  },
+  {
+    "id": "order-1779743334980",
+    "customer": {
+      "name": "gagaga",
+      "email": "gagaga@gmail.com",
+      "phone": "076-170 72 57",
+      "paymentMethod": "swish"
+    },
+    "items": [
+      {
+        "id": "cpu-ryzen-5-7600",
+        "category": "cpu",
+        "name": "Ryzen 5 7600",
+        "brand": "AMD",
+        "price": 2490,
+        "image": "",
+        "specs": [
+          "6 cores",
+          "12 threads",
+          "AM5"
+        ]
+      },
+      {
+        "id": "gpu-rtx-4070-super",
+        "category": "gpu",
+        "name": "GeForce RTX 4070 Super",
+        "brand": "NVIDIA",
+        "price": 7490,
+        "image": "",
+        "specs": [
+          "12GB GDDR6X",
+          "PCIe 4.0",
+          "1440p gaming"
+        ]
+      }
+    ],
+    "totalPrice": 9980,
+    "createdAt": "2026-05-25T21:08:54.980Z"
   }
 ]
