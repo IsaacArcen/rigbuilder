@@ -23,11 +23,16 @@ const createOrder = asyncHandler(async (req, res) => {
 
     if (!customer || !items || !totalPrice) {
         res.status(400);
-        throw new error("Missing order data");
+        throw new Error("Missing order data");
     }
 
     if (!customer.name || !customer.email || !customer.phone) {
         res.status(400);
-        throw new error("Missing customer details");
+        throw new Error("Missing customer details");
+    }
+
+    if (!Array.isArray(items) || items.length === 0) {
+        res.status(400);
+        throw new Error("Order must contain at least one item");
     }
 })
