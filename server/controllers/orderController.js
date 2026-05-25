@@ -1,3 +1,6 @@
+//Läser orders från order.json
+//Kollar igenom data för nya orders
+// Sparar datan från orders
 const asyncHandler = require("express-async-handler");
 const fs = require("fs");
 const path = require("path");
