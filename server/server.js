@@ -23,6 +23,8 @@ app.use(express.json());
 //Kopplar produkt-routers till /api/products
 app.use("/api/products", require("./routers/productRoutes"));
 
+app.use("/api/orders", require("./routers/orderRoutes"));
+
 //Test route
 app.get("/", (req, res) => {
   res.send("RigBuilder API is running");
