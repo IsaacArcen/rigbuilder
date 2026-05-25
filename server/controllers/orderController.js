@@ -19,8 +19,10 @@ const writeOrders = (orders) => {
 // @route POST /api/orders
 // @access public
 const createOrder = asyncHandler(async (req, res) => {
+    //frontend skickar customer items och totalPrice
     const { customer, items, totalPrice } = req.body;
 
+    //if cases kontrollerar att grundläggande info finns
     if (!customer || !items || !totalPrice) {
         res.status(400);
         throw new Error("Missing order data");
@@ -35,4 +37,21 @@ const createOrder = asyncHandler(async (req, res) => {
         res.status(400);
         throw new Error("Order must contain at least one item");
     }
-})
+
+    const orders = readOrders();
+    //skapa ny order
+    //date.now() enkelt unikt id
+    const newOrder = {
+        id: `order-${Date.now()}`,
+        customer,
+        items,
+        totalPrice,
+        createdAt: new Date().toISOString(),
+    };
+
+    //lägger till nya order i listan
+    orders.push(newOrder);
+    writeOrders(orders);
+    //201 = "created"
+    res.status(201).json(newOrder);
+});
