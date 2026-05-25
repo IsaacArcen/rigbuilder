@@ -52,6 +52,10 @@ function CheckoutPage() {
             return;
         }
 
+        if (!formData.name || !formData.email || !formData.phone) {
+            setErrorMessage("Please fill in all customer details.");
+            return;
+        }
         setErrorMessage("");
 
         console.log("Order ready to submit:", {
