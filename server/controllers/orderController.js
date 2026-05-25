@@ -55,3 +55,9 @@ const createOrder = asyncHandler(async (req, res) => {
     //201 = "created"
     res.status(201).json(newOrder);
 });
+
+//Exporta så orderRoutes.js kan använda funktionerna
+module.exports = {
+    createOrder,
+    getOrders,
+};
