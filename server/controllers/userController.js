@@ -50,4 +50,22 @@ const ensureDefaultUser = async () => {
     }
 };
 
-//
+// @desc Register user
+// @route POST /api/users/register
+// @access public
+const registerUser = asyncHandler(async (req, res) => {
+    const { username, email, password } req.body;
+
+    if (!username || !email || !password) {
+        res.status(400);
+        throw new Error("Please fill in all fields.");
+    }
+
+    const users = readUsers();
+
+    const userExists = users.some(
+        (user) => user.username === username || user.email === email
+    );
+
+    if ()
+})
