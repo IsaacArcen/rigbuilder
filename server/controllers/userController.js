@@ -17,3 +17,17 @@ const writeUsers = (users) => {
     fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
 };
 
+//skapar JWT token
+const createAccessToken = (user) => {
+    return jwt.sign(
+    {
+        user: {
+            id: user.id,
+            username: user.username,
+            email: user.email,
+        },
+    },
+    process.env.ACCESS_TOKEN_SECRET,
+    { expiresIn: "15m" }
+    );
+};
