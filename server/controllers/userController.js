@@ -112,5 +112,14 @@ const loginUsers = asyncHandler(async (req, res) => {
         throw new Error("Invalid username or password");
     }
 
-    
-})
+    const passwordMatches = await bcrypt.compare(password, user.password);
+
+    if (!passwordMatches) {
+        res.status(401);
+        throw new Error("Invalid username or password");
+    }
+
+    const accessToken = createAccessToken(user);
+
+    res.status(200).json({ accessToken });
+});
