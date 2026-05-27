@@ -90,3 +90,19 @@ const registerUser = asyncHandler(async (req, res) => {
         email: newUser.email,
     });
 });
+
+// @desc Login a user
+// @route POST /api/users/login
+// @access public
+const loginUsers = asyncHandler(async (req, res) => {
+    await ensureDefaultUser();
+
+    const { username, password } = req.body;
+
+    if (!username || !password) {
+        res.status(400);
+        throw new Error("Please enter username and password");
+    }
+
+    
+})
