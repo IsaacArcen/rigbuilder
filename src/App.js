@@ -42,7 +42,7 @@ function App() {
           <Route path="/builder/:category" element={<ComponentTypePage />} />
           <Route path="/cart" element={<CartRoutePage />} />
           <Route path="/checkout" element={<CheckoutRoutePage />} />
-          <Route path="/confirmation" element={<ConfirmationPage />} />
+          <Route path="/confirmation" element={<ConfirmationRoutePage />} />
         </Routes>
       </div>
     </BuildProvider>

@@ -24,6 +24,10 @@ export const componentCategories = {
     title: "Choose Cooling",
     subtitle: "Choose air or liquid cooling for stable temperatures.",
   },
+  case: {
+  title: "Choose Case",
+  subtitle: "Select the computer case for your build.",
+},
   extra: {
     title: "Choose Extra Components",
     subtitle: "Add extra fans, cables or accessories.",

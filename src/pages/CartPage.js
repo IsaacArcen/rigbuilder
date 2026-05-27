@@ -7,7 +7,7 @@ const componentLabels = {
     motherboard: "Motherboard",
     ram: "RAM",
     storage: "Storage",
-    coolong: "Cooling",
+    cooling: "Cooling",
     case: "Case",
     extra: "Extra",
 };

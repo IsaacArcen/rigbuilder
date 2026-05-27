@@ -104,7 +104,7 @@ function Builder() {
 
             <Link
             to="/cart"
-            className="builder-summary__button builder-summary__button-primary"
+            className="builder-summary__button builder-summary__button--primary"
             >
                 Go to cart
             </Link>
