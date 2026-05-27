@@ -31,3 +31,23 @@ const createAccessToken = (user) => {
     { expiresIn: "15m" }
     );
 };
+
+const ensureDefaultUser = async () => {
+    const users = readUsers();
+    const defaultUserExists = users.some((user) => user.username === "user");
+
+    if (!defaultUserExists) {
+        const hashedPassword = await bcrypt.hash("password", 10);
+
+        users.push({
+            id: "user-1",
+            username: "user",
+            email: "user@example.com",
+            password: hashedPassword,
+        });
+
+        writeUsers();
+    }
+};
+
+//
