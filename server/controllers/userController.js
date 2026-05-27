@@ -54,7 +54,7 @@ const ensureDefaultUser = async () => {
 // @route POST /api/users/register
 // @access public
 const registerUser = asyncHandler(async (req, res) => {
-    const { username, email, password } req.body;
+    const { username, email, password } = req.body;
 
     if (!username || !email || !password) {
         res.status(400);
@@ -67,5 +67,26 @@ const registerUser = asyncHandler(async (req, res) => {
         (user) => user.username === username || user.email === email
     );
 
-    if ()
-})
+    if (userExists) {
+        res.status(400);
+        throw new Error("User already exists");
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    const newUser =  {
+        id: `user-${Date.now()}`,
+        username,
+        email,
+        password: hashedPassword,
+    };
+
+    users.push(newUser);
+    writeUsers(users);
+
+    res.status(201).json({
+        id: newUser.id,
+        username: newUser.username,
+        email: newUser.email,
+    });
+});
