@@ -94,7 +94,7 @@ const registerUser = asyncHandler(async (req, res) => {
 // @desc Login a user
 // @route POST /api/users/login
 // @access public
-const loginUsers = asyncHandler(async (req, res) => {
+const loginUser = asyncHandler(async (req, res) => {
     await ensureDefaultUser();
 
     const { username, password } = req.body;
@@ -123,3 +123,16 @@ const loginUsers = asyncHandler(async (req, res) => {
 
     res.status(200).json({ accessToken });
 });
+
+// @desc Current user
+// @route GET /api/users/content
+// @access private
+const currentUser = asyncHandler(async (req, res) => {
+    res.status(200).json(req.user);
+});
+
+module.exports = {
+    registerUser,
+    loginUser,
+    
+}
