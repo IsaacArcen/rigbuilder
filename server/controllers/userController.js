@@ -104,5 +104,13 @@ const loginUsers = asyncHandler(async (req, res) => {
         throw new Error("Please enter username and password");
     }
 
+    const users = readUsers();
+    const user = users.find((item) => item.username === username);
+
+    if (!user) {
+        res.status(401);
+        throw new Error("Invalid username or password");
+    }
+
     
 })
