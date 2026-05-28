@@ -31,4 +31,24 @@ async function request(path, options = {}) {
         ...options,
         headers,
     });
+
+    const text = await res.text();
+
+    let data = null;
+
+    try {
+        data = text ? JSON.parse(text) : null;
+    } catch {
+        data = text;
+    }
+
+    if (!res.ok) {
+        const err = (data && data.message) || res.statusText || "Request failed";
+        throw new Error(err);
+    }
+
+    return data;
 }
+
+
+//AUTH REQUESTS
