@@ -46,7 +46,7 @@ const ensureDefaultUser = async () => {
             password: hashedPassword,
         });
 
-        writeUsers();
+        writeUsers(users);
     }
 };
 
