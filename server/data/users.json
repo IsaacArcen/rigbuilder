@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "id": "user-1",
+    "username": "user",
+    "email": "user@example.com",
+    "password": "$2b$10$4a0XOKg5uqlFPBPqNUeKDu0FO4Op6u65S4LMKnxyiZycZlhcEsmhK"
+  }
+]
