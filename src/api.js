@@ -13,3 +13,22 @@ function getToken() {
 export function isAuthenticated() {
     return !!getToken();
 }
+
+//alla api anrop går genom denna
+async function request(path, options = {}) {
+    const headers = options.headers || {};
+
+    const token = getToken();
+
+    if (token) {
+        headers["Authorization"] = `Bearer ${token}`;
+    }
+
+    //säger till backend vi skickar JSON
+    headers["Content-Type"] = "application/json";
+
+    const res = await fetch(`${API_BASE}${path}`, {
+        ...options,
+        headers,
+    });
+}
