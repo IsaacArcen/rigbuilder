@@ -7,3 +7,9 @@ const API_BASE = "http://localhost:5000/api";
 function getToken() {
     return localStorage.getItem("token");
 }
+
+//kollar om användaren är inloggad
+//om token finns = true, om inte = false
+export function isAuthenticated() {
+    return !!getToken();
+}
