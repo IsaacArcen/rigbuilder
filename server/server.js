@@ -25,6 +25,8 @@ app.use("/api/products", require("./routers/productRoutes"));
 
 app.use("/api/orders", require("./routers/orderRoutes"));
 
+app.use("/api/users", require("./routers/userRoutes"));
+
 //Test route
 app.get("/", (req, res) => {
   res.send("RigBuilder API is running");

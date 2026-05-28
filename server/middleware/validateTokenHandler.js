@@ -1,5 +1,5 @@
 const asyncHandler = require("express-async-handler");
-const jwt = requre("jsonwebtoken");
+const jwt = require("jsonwebtoken");
 
 //middleware som kontrollerar om request har en giltig jwt-token
 const validateToken = asyncHandler(async (req, res, next) => {
