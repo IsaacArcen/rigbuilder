@@ -25,3 +25,5 @@ const validateToken = asyncHandler(async (req, res, next) => {
         throw new Error("Token is missing or malformed");
     }
 });
+
+module.exports = validateToken;
