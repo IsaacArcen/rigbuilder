@@ -77,3 +77,10 @@ export async function login({ username, password }) {
     });
 }
 
+//inloggad användare
+export async function getCurrentUser() {
+    return request("users/current", {
+        method: "GET",
+    });
+}
+
