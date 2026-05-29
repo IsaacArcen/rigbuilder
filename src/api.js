@@ -103,3 +103,13 @@ export async function getProducts(id) {
     });
 }
 
+//ORDER REQUESTS
+
+//skapa ny order
+export async function createOrder(orderData) {
+    return request("/orders", {
+        method: "POST",
+        body: JSON.stringify(orderData),
+    });
+}
+
