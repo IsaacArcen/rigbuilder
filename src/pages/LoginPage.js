@@ -25,4 +25,31 @@ function LoginPage() {
             [name]: value,
         });
     };
+
+    //körs när användaren klickar login
+    const handeSubmit = async (event) => {
+        event.preventDefault();
+
+        if (!formData.username || !formData.password) {
+            setErrorMessage("Please enter username and password.");
+            return;
+        }
+
+        try {
+            setErrorMessage("");
+
+            //skickar username/password till backend
+            const data = await apiLogin(formData);
+
+            //sparar jwt - token i localStorage
+            login(data.accessToken);
+
+            //skicakr användaren till builder
+            navigate("/builder");
+        } catch (error) {
+            setErrorMessage(error.message);
+        }
+    };
+
+    
 }
