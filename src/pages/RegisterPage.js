@@ -15,5 +15,15 @@ function RegisterPage() {
     //sparar felmeddelande
     const [errorMessage, setErrorMessage] = useState("");
 
+    //uppdaterar rätt fält i formData när uiser skriver
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
+
     
 }
