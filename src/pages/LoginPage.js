@@ -51,5 +51,48 @@ function LoginPage() {
         }
     };
 
-    
+    return (
+        <section className="auth-page">
+            <div className="auth-card">
+                <p className="auth-card__eyebrow">Account</p>
+                <h1>Login</h1>
+
+                <form className="auth-form" onSubmit={handeSubmit}>
+                    <label>
+                        Username
+                        <input
+                            type="text"
+                            name="username"
+                            value={formData.username}
+                            onChange={handleChange}
+                            placeholder="user"
+                            />
+                    </label>
+
+                    <label>
+                        Password
+                        <input
+                            type="password"
+                            name="password"
+                            value={formData.password}
+                            onChange={handleChange}
+                            placeholder="password"
+                            />
+                    </label>
+
+                    {errorMessage && <p className="auth-form__error">{errorMessage}</p>}
+
+                    <button type="submit" className="auth-form__button">
+                        Login
+                    </button>
+                </form>
+
+                <p className="auth-card__text">
+                    No account yet? <Link to="/register">Create account</Link>
+                </p>
+            </div>
+        </section>
+    );
 }
+
+export default LoginPage;
