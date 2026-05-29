@@ -8,6 +8,7 @@ import { BuildProvider } from "./context/BuildContext";
 import CartPage from "./pages/CartPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import ConfirmationPage from "./pages/ConfirmationPage";
+import { AuthProvider } from "./AuthContext";
 
 
 //Homepage
