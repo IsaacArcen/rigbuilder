@@ -133,3 +133,13 @@ export function saveToken(token) {
     }
 }
 
+//Logga ut användare (radera token) 
+export function logout() {
+    localStorage.removeItem("token");
+
+    try {
+        window.dispatchEvent(new Event("authChange"));
+    } catch (e) {
+        
+    }
+}
