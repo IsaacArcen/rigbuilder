@@ -5,7 +5,7 @@ import { useAuth } from "../AuthContext";
 
 import loginIcon from "../assets/icons/login.svg";
 import logoutIcon from "../assets/icons/logout.svg";
-import accountIcon from "../assets/icons/account.svg";
+// import accountIcon from "../assets/icons/account.svg";
 import cartIcon from "../assets/icons/cart.svg";
 //Navbar-komponenten
 
@@ -48,9 +48,20 @@ function Navbar() {
             </nav>
 
             <div className="navbar__actions">
-                <button className="navbar__icon-button" aria-label="Account">
-                    <img src={accountIcon} alt="" className="navbar__icon"/>
-                </button>
+                {authed? (
+                    <button
+                        type="button"
+                        className="navbar__icon-button"
+                        aria-label="Logout"
+                        onClick={logout}
+                        >
+                            <img src={loginIcon} alt="" className="navbar__icon" />
+                        </button>
+                ) : (
+                    <Link to="/login" className="navbar__icon-button" aria-label="Login">
+                        <img src={loginIcon} alt="" className="navbar__icon" />
+                    </Link>
+                )}
 
                 <button
                     type="button"
