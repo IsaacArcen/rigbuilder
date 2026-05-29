@@ -52,3 +52,16 @@ async function request(path, options = {}) {
 
 
 //AUTH REQUESTS
+
+//registrera en ny användare
+export async function register({ username, email, password }) {
+    return request("/users/register", {
+        method: "POST",
+        body: JSON.stringify({
+            username,
+            email,
+            password,
+        }),
+    });
+}
+
