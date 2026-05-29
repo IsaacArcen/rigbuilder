@@ -12,5 +12,8 @@ function RegisterPage() {
         password: "",
     });
 
+    //sparar felmeddelande
+    const [errorMessage, setErrorMessage] = useState("");
+
     
 }
