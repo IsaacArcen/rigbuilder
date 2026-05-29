@@ -119,3 +119,17 @@ export async function getOrders() {
         method: "GET",
     });
 }
+
+//AUTH FUNCTIONS
+
+//sparar token efter login
+export function saveToken(token) {
+    localStorage.setItem("token", token);
+
+    try {
+        window.dispatchEvent(new Event("authChange"));
+    } catch (e) {
+
+    }
+}
+
