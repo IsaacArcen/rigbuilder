@@ -26,7 +26,7 @@ function RegisterPage() {
     };
     
     //när anvädaren klickar på register
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
         if (!formData.username || !formData.email || !formData.password) {
@@ -54,7 +54,7 @@ function RegisterPage() {
                 <p className="auth-card__eyebrow">Account</p>
                 <h1>Create account</h1>
 
-                <form className="auth-form" onSubmit={handleSubmitd}>
+                <form className="auth-form" onSubmit={handleSubmit}>
                     <label>
                         Username
                         <input
