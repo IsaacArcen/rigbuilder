@@ -48,7 +48,7 @@ function App() {
           <Route path="/checkout" element={<CheckoutRoutePage />} />
           <Route path="/confirmation" element={<ConfirmationRoutePage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
         </Routes>
       </div>
     </BuildProvider>
