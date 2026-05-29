@@ -45,6 +45,7 @@ function App() {
           <Route path="/cart" element={<CartRoutePage />} />
           <Route path="/checkout" element={<CheckoutRoutePage />} />
           <Route path="/confirmation" element={<ConfirmationRoutePage />} />
+          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </div>
     </BuildProvider>
