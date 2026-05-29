@@ -113,3 +113,9 @@ export async function createOrder(orderData) {
     });
 }
 
+//hämta alla orders
+export async function getOrders() {
+    return request("orders", {
+        method: "GET",
+    });
+}
