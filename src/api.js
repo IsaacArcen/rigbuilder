@@ -65,3 +65,15 @@ export async function register({ username, email, password }) {
     });
 }
 
+//Logga in
+//via username+password
+export async function login({ username, password }) {
+    return request("/users/login", {
+        method: "POST",
+        body: JSON.stringify({
+            username,
+            password,  
+        }),
+    });
+}
+
