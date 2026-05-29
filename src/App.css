@@ -1347,3 +1347,127 @@ background-repeat:
     width: 100%;
   }
 }
+
+/* AUTH PAGES (Loginpage, registerpage) */
+
+.auth-page {
+  min-height: calc(100vh - 72px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 72px clamp(24px, 6vw, 96px);
+  color: #f3f3f3;
+}
+
+/* Själva login/register-rutan */
+.auth-card {
+  width: min(100%, 460px);
+  padding: 32px;
+  border: 1px solid rgba(243, 243, 243, 0.18);
+  background-color: rgba(7, 7, 7, 0.68);
+  backdrop-filter: blur(8px);
+}
+
+/* Liten text ovanför rubriken */
+.auth-card__eyebrow {
+  margin: 0 0 14px;
+  font-size: 10px;
+  color: rgba(243, 243, 243, 0.58);
+  text-transform: uppercase;
+}
+
+/* Login / Create account */
+.auth-card h1 {
+  margin: 0 0 28px;
+  font-size: clamp(30px, 4vw, 46px);
+  font-weight: 400;
+}
+
+/* Formuläret lägger inputs under varandra */
+.auth-form {
+  display: grid;
+  gap: 18px;
+}
+
+/* Label runt varje input */
+.auth-form label {
+  display: grid;
+  gap: 10px;
+  font-size: 10px;
+  color: rgba(243, 243, 243, 0.76);
+}
+
+/* Input-fälten */
+.auth-form input {
+  width: 100%;
+  height: 42px;
+  padding: 0 14px;
+  border: 1px solid rgba(243, 243, 243, 0.22);
+  border-radius: 2px;
+  background-color: rgba(7, 7, 7, 0.55);
+  color: #f3f3f3;
+  font-family: inherit;
+  font-size: 10px;
+  outline: none;
+}
+
+.auth-form input::placeholder {
+  color: rgba(243, 243, 243, 0.42);
+}
+
+.auth-form input:focus {
+  border-color: rgba(243, 243, 243, 0.78);
+}
+
+/* Felmeddelande från login/register */
+.auth-form__error {
+  margin: 0;
+  color: #ff6b6b;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+/* Submit-knappen */
+.auth-form__button {
+  width: 100%;
+  height: 42px;
+  margin-top: 4px;
+  border: 1px solid #f3f3f3;
+  background-color: #f3f3f3;
+  color: #070707;
+  font-family: inherit;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+/* Texten under formuläret */
+.auth-card__text,
+.auth-form__text {
+  margin: 22px 0 0;
+  font-size: 10px;
+  line-height: 1.6;
+  color: rgba(243, 243, 243, 0.68);
+}
+
+.auth-card__text a,
+.auth-form__text a {
+  color: #f3f3f3;
+  text-decoration: underline;
+}
+
+/* Mobilanpassning */
+@media (max-width: 620px) {
+  .auth-page {
+    min-height: calc(100vh - 72px);
+    padding: 48px 20px;
+    align-items: flex-start;
+  }
+
+  .auth-card {
+    padding: 24px;
+  }
+
+  .auth-card h1 {
+    font-size: 30px;
+  }
+}

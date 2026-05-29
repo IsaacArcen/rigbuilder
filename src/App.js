@@ -107,7 +107,7 @@ function RegisterRoutePage() {
   return (
     <main className="app-page app-page--background">
       <Navbar />
-      <LoginPage />
+      <RegisterPage />
     </main>
   );
 }
