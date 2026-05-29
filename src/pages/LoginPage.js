@@ -12,4 +12,17 @@ function LoginPage() {
         username: "",
         password: "",
     });
+
+    //sparar felmedelandet
+    const [errorMessage, setErrorMessage] = useState("");
+
+    //uppdaterar när användaren skriver i input
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
 }
