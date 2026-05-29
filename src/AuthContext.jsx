@@ -22,5 +22,10 @@ export function AuthProvider({ children }) {
         setAuthed(false);
     }
 
-    
+    return (
+        <AuthContext.Provider value={{ authed, login, logout }}>
+            {children}
+        </AuthContext.Provider>
+    );
 }
+
