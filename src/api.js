@@ -84,3 +84,14 @@ export async function getCurrentUser() {
     });
 }
 
+//PRODUCT REQUESTS
+
+//Hämta produkter
+//via kategori
+export async function getProducts(category) {
+    const query = category ? `?category=${category}` : "";
+
+    return request(`/products${query}`, {
+        method: "GET",
+    });
+}
