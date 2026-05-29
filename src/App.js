@@ -37,6 +37,7 @@ function BuilderPage() {
 function App() {
   return (
     <BrowserRouter>
+    <AuthProvider>
     <BuildProvider>
       <div className="page">
         <Routes>
@@ -51,6 +52,7 @@ function App() {
         </Routes>
       </div>
     </BuildProvider>
+    </AuthProvider>
     </BrowserRouter>
   );
 }
