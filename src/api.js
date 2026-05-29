@@ -95,3 +95,11 @@ export async function getProducts(category) {
         method: "GET",
     });
 }
+
+//produkt via ID
+export async function getProducts(id) {
+    return request(`/products${id}`, {
+        method: "GET",
+    });
+}
+
