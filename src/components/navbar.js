@@ -24,6 +24,8 @@ const componentLabels = {
 function Navbar() {
     const [isCartOpen, setIsCartOpen] = useState(false);
 
+    const { authed, logout } = useAuth();
+
     const { build, removeComponent } = useBuild();
 
     const selectedItems = Object.entries(build).filter(([, product]) => product);
