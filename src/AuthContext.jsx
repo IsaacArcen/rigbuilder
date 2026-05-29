@@ -29,3 +29,7 @@ export function AuthProvider({ children }) {
     );
 }
 
+//custom hook
+export function useAuth() {
+    return useContext(AuthContext);
+}
