@@ -97,7 +97,7 @@ export async function getProducts(category) {
 }
 
 //produkt via ID
-export async function getProducts(id) {
+export async function getProductsById(id) {
     return request(`/products${id}`, {
         method: "GET",
     });
@@ -140,6 +140,21 @@ export function logout() {
     try {
         window.dispatchEvent(new Event("authChange"));
     } catch (e) {
-        
+
     }
 }
+
+//exporterra alla funktioner som ett objekt
+//gör det möjligt att importera hela API:t enklare
+export default {
+    register,
+    login,
+    getCurrentUser,
+    getProducts,
+    getProductsById,
+    createOrder,
+    getOrders,
+    saveToken,
+    logout,
+    isAuthenticated,
+};
