@@ -94,4 +94,13 @@ function ConfirmationRoutePage() {
   );
 }
 
+function LoginRoutePage() {
+  return (
+    <main className="app-page app-page--background">
+      <Navbar />
+      <LoginPage />
+    </main>
+  );
+}
+
 export default App;
