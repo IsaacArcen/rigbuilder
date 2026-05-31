@@ -119,7 +119,7 @@ function RegisterRoutePage() {
   );
 }
 
-function FavoritesRoutePath() {
+function FavoritesRoutePage() {
   return (
     <main className="app-page app-page--background">
       <Navbar />
