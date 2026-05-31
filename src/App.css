@@ -242,8 +242,21 @@ body {
   color: #f3f3f3;
 }
 
-/* Bakgrund som används på builder och andra undersidor */
+/* Fast bakgrund för alla undersidor */
 .app-page--background {
+  position: relative;
+  isolation: isolate;
+  background-color: #070707;
+}
+
+/* Bilden fyller alltid webbläsarfönstret.
+   Den påverkas inte när sidans innehåll ändrar höjd. */
+.app-page--background::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
   background-image: url("./assets/images/PageBackground.png");
   background-size: cover;
   background-position: center;
