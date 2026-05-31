@@ -6,6 +6,17 @@ import { useBuild } from "../context/BuildContext";
 import { useAuth } from "../AuthContext";
 import { useFavorites } from "../context/FavoritesContext";
 
+
+const categoryImages = {
+    gpu: "/images/categories/gpu.png",
+   cpu: "/images/categories/cpu.png",
+  motherboard: "/images/categories/motherboard.png",
+  ram: "/images/categories/ram.png",
+  storage: "/images/categories/storage.png",
+  cooling: "/images/categories/cooling.png",
+  case: "/images/categories/case.png",
+  extra: "/images/categories/extra.png",
+}
 //sida som kan användas för alla komponentsidor
 //hömtar produkterna från backend och filtrerar efter kategori
 function ComponentPage() {
@@ -150,7 +161,9 @@ const filteredProducts = products.filter((product) => {
               <article className="product-card" key={product.id}>
                 <div className="product-card__image-placeholder">
                   {product.image ? (
-                    <img src={product.image} alt={product.name} />
+                    <img src={product.image || categoryImages[product.category]}
+                    alt={product.name} 
+                    />
                   ) : (
                     "Product Image"
                   )}
