@@ -3,6 +3,8 @@ import { Link, useParams } from "react-router-dom";
 import { componentCategories } from "../data/componentCategories";
 import { useNavigate } from "react-router-dom";
 import { useBuild } from "../context/BuildContext";
+import { useAuth } from "../AuthContext";
+import { useFavorites } from "../FavoritesContext";
 
 //sida som kan användas för alla komponentsidor
 //hömtar produkterna från backend och filtrerar efter kategori
