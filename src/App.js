@@ -119,4 +119,13 @@ function RegisterRoutePage() {
   );
 }
 
+function FavoritesRoutePath() {
+  return (
+    <main className="app-page app-page--background">
+      <Navbar />
+      <FavoritesPage />
+    </main>
+  );
+}
+
 export default App;
