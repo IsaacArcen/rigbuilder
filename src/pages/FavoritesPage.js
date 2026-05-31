@@ -62,9 +62,52 @@ if (!authed) {
                 <div>
                     <p className="favorites-page__eyebrow">Saved components</p>
                     <h1>Favorites</h1>
-                    
+                    <p>Review your saved products and add them to your build.</p>
                 </div>
+
+                <Link to="/builder" className="favorites-page__button">
+                    Back to Builder
+                </Link>
+            </div>
+
+            {errorMessage && <p>{errorMessage}</p>}
+
+            {!errorMessage && favoriteProducts.length === 0 && (
+                <p>You have not saved any favorite products yet.</p>
+            )}
+
+            <div className="favorites-page__grid">
+                {favoriteProducts.map((product) => (
+                    <article className="favorite-card" key={product.id}>
+                        <span className="favorite-card__category">
+                            {product.category}
+                        </span>
+
+                        <h2>{product.name}</h2>
+                        <p>{product.brand}</p>
+                        <strong>{product.price} kr</strong>
+
+                        <div className="favorite-card__actions">
+                            <button
+                                type="button"
+                                onClick={() => toggleFavorites(product.id)}
+                                >
+                                    Remove
+                                </button>
+
+                                <button
+                                    type="button"
+                                    className="favorite-card__select"
+                                    onClick={() =>handleSelectProduct(product)}
+                                    >
+                                        Select
+                                    </button>
+                        </div>
+                    </article>
+                ))}
             </div>
         </section>
-    )
+    );
 }
+
+export default FavoritesPage;
