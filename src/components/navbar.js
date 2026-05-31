@@ -78,9 +78,9 @@ function Navbar() {
                     >
                         <img src={cartIcon} alt="" className="navbar__icon" />
 
-                        {selectedItems.length > 0 && (
+                        {totalQuantity > 0 && (
                             <span className="navbar__cart-count">
-                                {selectedItems.length}
+                                {totalQuantity}
                             </span>
                         )}
                     </button>
@@ -111,7 +111,8 @@ function Navbar() {
                                 <div>
                                     <span>{componentLabels[category] || category}</span>
                                     <h3>{product.name}</h3>
-                                    <p>{product.price}</p>
+                                    <p>
+                                        {product.price}</p>
                                 </div>
 
                                 <button
