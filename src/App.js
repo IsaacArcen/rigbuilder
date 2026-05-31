@@ -3,6 +3,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Builder from "./components/Builder";
+//pages
 import ComponentPage from "./pages/ComponentPage";
 import { BuildProvider } from "./context/BuildContext";
 import CartPage from "./pages/CartPage";
@@ -10,6 +11,8 @@ import CheckoutPage from "./pages/CheckoutPage";
 import ConfirmationPage from "./pages/ConfirmationPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
+import FavoritesPage from "./pages/FavoritesPage";
+//context
 import { AuthProvider } from "./AuthContext";
 import { FavoritesProvider } from "./context/FavoritesContext";
 
