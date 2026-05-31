@@ -52,7 +52,7 @@ function Builder() {
                 {selectedProduct ? (
                   <div className="builder-card__selected">
                     <strong>{selectedProduct.name}</strong>
-                    <span>{selectedProduct.price} kr</span>
+                    <span> - {selectedProduct.price} kr</span>
                   </div>
                 ) : (
                   <span className="builder-card__plus">+</span>
