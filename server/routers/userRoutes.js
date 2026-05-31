@@ -26,6 +26,6 @@ router.get("/favorites", validateToken, getFavorites);
 
 router.post("/favorites", validateToken, addFavorite);
 
-router.delete("/favorites", validateToken, removeFavorite);
+router.delete("/favorites/:productId", validateToken, removeFavorite);
 
 module.exports = router;
