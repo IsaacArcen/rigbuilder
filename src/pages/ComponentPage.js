@@ -165,9 +165,32 @@ const filteredProducts = products.filter((product) => {
 
                   <div className="product-card__bottom">
                     <span>{product.price} kr</span>
-                    <button type="button" onClick={() => handleSelectProduct(product)}>
-                        Select
-                    </button>
+
+                    <div className="product-card__actions">
+                      {authed && (
+                        <button
+                          type="button"
+                          className={`product-card__favorite ${
+                            isFavorite(product.id) ? "is-favorite" : ""
+                          }`}
+                          aria-label={
+                            isFavorite(product.id)
+                            ? "Remove from favorites"
+                            : "Add to favorites"
+                          }
+                          onClick={() => toggleFavorite(product.id)}
+                          >
+                            {isFavorite(product.id) ? "★" : "☆"}
+                          </button>
+                      )}
+
+                      <button
+                        type="button"
+                        onClick={() => handleSelectProduct(product)}
+                        >
+                          Select
+                        </button>
+                    </div>
                   </div>
                 </div>
               </article>
