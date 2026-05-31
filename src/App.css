@@ -1471,3 +1471,32 @@ background-repeat:
     font-size: 30px;
   }
 }
+
+/* Knapparna längst ner på produktkortet */
+.product-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Favoritknappen visas endast för inloggade användare */
+.product-card__actions .product-card__favorite {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(243, 243, 243, 0.75);
+  background-color: transparent;
+  color: #f3f3f3;
+  font-family: inherit;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Visar tydligt att produkten redan är sparad */
+.product-card__actions .product-card__favorite.is-favorite {
+  background-color: #f3f3f3;
+  color: #070707;
+}
