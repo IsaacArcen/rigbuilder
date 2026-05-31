@@ -57,4 +57,18 @@ export function FavoritesProvider({ children }) {
             console.error(error.message);
         }
     };
+
+    return (
+        <FavoritesContext.Provider
+            value={{
+                favorites,
+                isFavorite,
+                toggleFavorite,
+            }}
+            >
+                {children}
+            </FavoritesContext.Provider>
+    );
 }
+
+export function useFavorites()
