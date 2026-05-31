@@ -179,6 +179,29 @@ const addFavorite = asyncHandler(async (req, res) => {
     res.status(200).json(user.favorites);
 });
 
+// @desc Remove product from favorites
+// @route DELETE /api/users/favorites/:productId
+// @access private
+const removeFavorite = asyncHandler(async (req, res) => {
+    const users = readUsers();
+    const user = users.find((item) => item.id === req.user.id);
+
+    if (!user) {
+        res.status(404);
+        throw new Error("User not found");
+    }
+
+    //filter skapar en array utan produkten som ska deletas
+    user.favorites = user.favorites.filter(
+        (productId) => productId !== req.params.productId
+    );
+
+    writeUsers(users);
+
+    //skickar den uppdaterade listan
+    res.status(200).json(user.favorites);
+});
+
 module.exports = {
     registerUser,
     loginUser,
