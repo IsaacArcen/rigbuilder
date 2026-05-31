@@ -54,6 +54,7 @@ function App() {
           <Route path="/confirmation" element={<ConfirmationRoutePage />} />
           <Route path="/login" element={<LoginRoutePage />} />
           <Route path="/register" element={<RegisterRoutePage />} />
+          <Route path="/favorites" element={<FavoritesRoutePage />} />
         </Routes>
       </div>
     </BuildProvider>
