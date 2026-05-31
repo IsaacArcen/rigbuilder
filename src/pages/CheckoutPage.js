@@ -54,7 +54,7 @@ function CheckoutPage() {
             return;
         }
 
-        if (!formData.name || !formData.email || !formData.phone) {
+        if (!formData.name || !formData.email || !formData.phone || !formData.paymentMethod) {
             setErrorMessage("Please fill in all customer details.");
             return;
         }
