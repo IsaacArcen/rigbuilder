@@ -37,5 +37,24 @@ export function FavoritesProvider({ children }) {
         return favorites.includes(productId);
     };
 
-    
+    //lägger till eller tar bort beroende på läget
+    const toggleFavorite = async (productId) => {
+        if (!authed) {
+            return;
+        }
+
+        try {
+            let updatedFavorites;
+
+            if (isFavorite(productId)) {
+                updatedFavorites = await removeFavorite(productId);
+            } else {
+                updatedFavorites = await addFavorite(productId);
+            }
+
+            setFavorites(updatedFavorites);
+        } catch (error) {
+            console.error(error.message);
+        }
+    };
 }
