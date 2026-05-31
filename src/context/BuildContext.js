@@ -46,6 +46,16 @@ export function BuildProvider({ children }) {
         }));
     };
 
+    const increaseQuantity = (category) => {
+        setBuild((currentBuild) => ({
+            ...currentBuild,
+            [category]: {
+                ...currentBuild[category],
+                quantity: currentBuild[category].quantity + 1,
+            },
+        }));
+    };
+
     const clearBuild = () => {
         setBuild(emptyBuild);
     };
