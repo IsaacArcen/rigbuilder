@@ -45,7 +45,6 @@ function Navbar() {
                 <Link to="/">Home</Link>
                 <Link to="/builder">Builder</Link>
                 {authed && <Link to="/favorites">Favorites</Link>}
-                <Link to="/contact">Contact</Link>
             </nav>
 
             <div className="navbar__actions">
