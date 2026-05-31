@@ -141,6 +141,14 @@ export async function addFavorite(productId) {
     });
 }
 
+//ta bort produkt från favorites
+//DELETE /api/users/favorites/:productId
+export async function removeFavorite(productId) {
+    return request(`/users/favorites/${productId}`, {
+        method: "DELETE",
+    });
+}
+
 //AUTH FUNCTIONS
 
 //sparar token efter login
