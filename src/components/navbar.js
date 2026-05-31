@@ -44,6 +44,7 @@ function Navbar() {
             <nav className="navbar__links" aria-label="Main Navigation">
                 <Link to="/">Home</Link>
                 <Link to="/builder">Builder</Link>
+                {authed && <Link to="/favorites">Favorites</Link>}
                 <Link to="/contact">Contact</Link>
             </nav>
 
