@@ -39,6 +39,7 @@ function App() {
   return (
     <BrowserRouter>
     <AuthProvider>
+      <FavoritesProvider>
     <BuildProvider>
       <div className="page">
         <Routes>
@@ -53,6 +54,7 @@ function App() {
         </Routes>
       </div>
     </BuildProvider>
+    </FavoritesProvider>
     </AuthProvider>
     </BrowserRouter>
   );
