@@ -44,6 +44,7 @@ const ensureDefaultUser = async () => {
             username: "user",
             email: "user@example.com",
             password: hashedPassword,
+            favorites: [],
         });
 
         writeUsers(users);
@@ -79,6 +80,7 @@ const registerUser = asyncHandler(async (req, res) => {
         username,
         email,
         password: hashedPassword,
+        favorites: [],
     };
 
     users.push(newUser);
@@ -151,6 +153,24 @@ const getFavorites = asyncHandler(async (req, res) => {
 // @desc Add product to favorites
 // @route POST /api/users/favorites
 // @access private
+const addFavorite = asyncHandler(async (req, res) => {
+    const { productId } = req.body;
+    const users = readUsers();
+
+    if (!productId) {
+        res.status(400);
+        throw new Error("Product id is required");
+    }
+
+    const user = users.find((item) => item.id === req.user.id);
+
+    if (!user) {
+        res.status(404);
+        throw new Error("User not found");
+    }
+
+    //skapar en array user
+})
 
 module.exports = {
     registerUser,
