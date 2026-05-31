@@ -28,4 +28,12 @@ function FavoritesPage() {
 
         loadProducts();
     }, []);
+
+    //favoriter innehåller bara produkt id
+    // filtrerar ut motsvarande produktobjekt
+    const favoriteProducts = products.filter((product) =>
+        favorites.includes(product.id)
+);
+
+
 }

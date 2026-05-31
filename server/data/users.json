@@ -11,9 +11,6 @@
     "username": "isaac",
     "email": "isaac@gmail.com",
     "password": "$2b$10$UNmUdJ5ZS2P5eXA76ImND.YHsWKnCRHbtbd.8IKAfTIyxy56Sf3NW",
-    "favorites": [
-      "cpu-ryzen-5-5600",
-      "cpu-ryzen-5-7600"
-    ]
+    "favorites": []
   }
 ]
