@@ -6,17 +6,28 @@ import { useBuild } from "../context/BuildContext";
 import { useAuth } from "../AuthContext";
 import { useFavorites } from "../context/FavoritesContext";
 
+//bilder
+import gpuImage from "../assets/images/categories/gpu.png";
+import cpuImage from "../assets/images/categories/cpu.png";
+import motherboardImage from "../assets/images/categories/motherboard.png";
+import ramImage from "../assets/images/categories/ram.png";
+import storageImage from "../assets/images/categories/storage.jpg";
+import coolingImage from "../assets/images/categories/cooling.png";
+import caseImage from "../assets/images/categories/case.png";
+import extraImage from "../assets/images/categories/extra.png";
 
+
+// Generella bilder som används när produkten saknar en egen bild.
 const categoryImages = {
-    gpu: "/images/categories/gpu.png",
-   cpu: "/images/categories/cpu.png",
-  motherboard: "/images/categories/motherboard.png",
-  ram: "/images/categories/ram.png",
-  storage: "/images/categories/storage.png",
-  cooling: "/images/categories/cooling.png",
-  case: "/images/categories/case.png",
-  extra: "/images/categories/extra.png",
-}
+  gpu: gpuImage,
+  cpu: cpuImage,
+  motherboard: motherboardImage,
+  ram: ramImage,
+  storage: storageImage,
+  cooling: coolingImage,
+  case: caseImage,
+  extra: extraImage,
+};
 //sida som kan användas för alla komponentsidor
 //hömtar produkterna från backend och filtrerar efter kategori
 function ComponentPage() {
@@ -160,13 +171,10 @@ const filteredProducts = products.filter((product) => {
             filteredProducts.map((product) => (
               <article className="product-card" key={product.id}>
                 <div className="product-card__image-placeholder">
-                  {product.image ? (
-                    <img src={product.image || categoryImages[product.category]}
+                    <img 
+                    src={product.image || categoryImages[product.category]}
                     alt={product.name} 
                     />
-                  ) : (
-                    "Product Image"
-                  )}
                 </div>
 
                 <div className="product-card__content">

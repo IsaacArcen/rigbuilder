@@ -1725,3 +1725,12 @@ background-repeat:
   justify-content: space-between;
 }
 }
+
+/* Generella bilder i produktkorten */
+.product-card__image-placeholder img {
+  width: 100%;
+  height: 100%;
+  padding: 18px;
+  display: block;
+  object-fit: contain;
+}
