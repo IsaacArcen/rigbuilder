@@ -35,5 +35,9 @@ function FavoritesPage() {
         favorites.includes(product.id)
 );
 
-
+//lägger produkten på rätt plats i datorbygget
+const handleSelectProduct = (product) => {
+    selectComponent(product.category, product);
+    navigate("/builder");
+};
 }
