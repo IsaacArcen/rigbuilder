@@ -28,8 +28,15 @@ function Navbar() {
 
     const { build, removeComponent } = useBuild();
 
+    //tar fram alla valda produkter
     const selectedItems = Object.entries(build).filter(([, product]) => product);
 
+    //räknar totalt antal
+    const totalQuantity = selectedItems.reduce((sum, [, product]) => {
+        return sum + product.quantity;
+    }, 0);
+
+    //totalpris
     const totalPrice = selectedItems.reduce((sum, [, product]) => {
         return sum + product.price;
     }, 0);
