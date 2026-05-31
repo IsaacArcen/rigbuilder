@@ -206,4 +206,7 @@ module.exports = {
     registerUser,
     loginUser,
     currentUser,
+    getFavorites,
+    addFavorite,
+    removeFavorite,
 };
