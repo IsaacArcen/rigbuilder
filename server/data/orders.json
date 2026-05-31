@@ -128,5 +128,46 @@
     ],
     "totalPrice": 9160,
     "createdAt": "2026-05-31T12:03:19.687Z"
+  },
+  {
+    "id": "order-1780238280693",
+    "customer": {
+      "name": "isafsaf",
+      "email": "isaac@gmail.com",
+      "phone": "53152151",
+      "paymentMethod": "swish"
+    },
+    "items": [
+      {
+        "id": "storage-kingston-nv2-1tb",
+        "category": "storage",
+        "name": "Kingston NV2 1TB",
+        "brand": "Kingston",
+        "price": 690,
+        "image": "",
+        "specs": [
+          "1TB",
+          "NVMe SSD",
+          "PCIe 4.0"
+        ],
+        "quantity": 3
+      },
+      {
+        "id": "cooling-h150i",
+        "category": "cooling",
+        "name": "Corsair iCUE H150i Elite",
+        "brand": "Corsair",
+        "price": 2290,
+        "image": "",
+        "specs": [
+          "Liquid cooler",
+          "360mm radiator",
+          "RGB"
+        ],
+        "quantity": 1
+      }
+    ],
+    "totalPrice": 4360,
+    "createdAt": "2026-05-31T14:38:00.693Z"
   }
 ]

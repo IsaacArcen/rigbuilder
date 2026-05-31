@@ -48,13 +48,13 @@ function ConfirmationPage() {
                 </div>
 
                 <div className="confirmation-card__items">
-                    {order.items.map((product) => {
+                    {order.items.map((product) => (
                         <article className="confirmation-item" key={product.id}>
                             <span>{componentLabels[product.category] || product.category}</span>
                             <h2>{product.name}</h2>
-                            <p>{product.price} kr</p>
+                            <p>{product.quantity} * {product.price} kr</p>
                         </article>
-                    })}
+                    ))}
                 </div>
 
                 <div className="confirmation-card__total">
