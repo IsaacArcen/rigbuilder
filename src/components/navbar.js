@@ -55,7 +55,7 @@ function Navbar() {
                         aria-label="Logout"
                         onClick={logout}
                         >
-                            <img src={loginIcon} alt="" className="navbar__icon" />
+                            <img src={logoutIcon} alt="" className="navbar__icon" />
                         </button>
                 ) : (
                     <Link to="/login" className="navbar__icon-button" aria-label="Login">
