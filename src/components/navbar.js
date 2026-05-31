@@ -38,7 +38,7 @@ function Navbar() {
 
     //totalpris
     const totalPrice = selectedItems.reduce((sum, [, product]) => {
-        return sum + product.price;
+        return sum + product.price * product.quantity;
     }, 0);
 
     return (
