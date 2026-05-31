@@ -87,6 +87,8 @@ export function BuildProvider({ children }) {
                 build,
                 selectComponent,
                 removeComponent,
+                increaseQuantity,
+                decreaseQuantity,
                 clearBuild,
             }}
             >
