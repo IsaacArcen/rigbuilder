@@ -40,4 +40,31 @@ const handleSelectProduct = (product) => {
     selectComponent(product.category, product);
     navigate("/builder");
 };
+
+//favoritsidan måste vara loggad in
+if (!authed) {
+    return (
+        <section className="favorites-page">
+            <h1>Favorites</h1>
+            <p>Please log in to see your favorite products.</p>
+
+            <Link to="/login" className="favorites-page__button">
+                Login
+            </Link>
+        </section>
+    );
+}
+
+//om inloggad
+    return (
+        <section className="favorites-page">
+            <div className="favorites-page__header">
+                <div>
+                    <p className="favorites-page__eyebrow">Saved components</p>
+                    <h1>Favorites</h1>
+                    
+                </div>
+            </div>
+        </section>
+    )
 }
