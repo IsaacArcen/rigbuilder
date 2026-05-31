@@ -11,7 +11,7 @@ import ConfirmationPage from "./pages/ConfirmationPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import { AuthProvider } from "./AuthContext";
-import { FavoritesProvider } from "./context/FavoriteContext";
+import { FavoritesProvider } from "./context/FavoritesContext";
 
 
 //Homepage

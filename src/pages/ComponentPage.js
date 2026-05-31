@@ -12,6 +12,8 @@ function ComponentPage() {
     const { category } = useParams();
     const navigate = useNavigate();
     const { selectComponent } = useBuild();
+    const { authed } = useAuth();
+    const { isFavorite, toggleFavorite } = useFavorites();
 
     const handleSelectProduct = (product) => {
   selectComponent(category, product);
