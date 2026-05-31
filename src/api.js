@@ -120,6 +120,16 @@ export async function getOrders() {
     });
 }
 
+//FAVORITE REQUESTS
+
+//Hämta favorit produkterna
+// GET /api/users/favorites
+export async function getFavorites() {
+    return request("/users/favorites", {
+        method: "GET",
+    });
+}
+
 //AUTH FUNCTIONS
 
 //sparar token efter login
