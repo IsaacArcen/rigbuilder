@@ -169,5 +169,102 @@
     ],
     "totalPrice": 4360,
     "createdAt": "2026-05-31T14:38:00.693Z"
+  },
+  {
+    "id": "order-1780246368575",
+    "customer": {
+      "name": "isaac",
+      "email": "isaac@gmail.com",
+      "phone": "53125321",
+      "paymentMethod": "card"
+    },
+    "items": [
+      {
+        "id": "cpu-ryzen-5-5600",
+        "category": "cpu",
+        "name": "Ryzen 5 5600",
+        "brand": "AMD",
+        "price": 1390,
+        "image": "",
+        "specs": [
+          "6 cores",
+          "12 threads",
+          "AM4"
+        ],
+        "quantity": 1
+      },
+      {
+        "id": "gpu-rtx-4060",
+        "category": "gpu",
+        "name": "GeForce RTX 4060",
+        "brand": "NVIDIA",
+        "price": 3690,
+        "image": "",
+        "specs": [
+          "8GB GDDR6",
+          "PCIe 4.0",
+          "1080p gaming"
+        ],
+        "quantity": 1
+      },
+      {
+        "id": "motherboard-b550-f-gaming",
+        "category": "motherboard",
+        "name": "ASUS ROG Strix B550-F Gaming",
+        "brand": "ASUS",
+        "price": 1890,
+        "image": "",
+        "specs": [
+          "AM4",
+          "ATX",
+          "DDR4"
+        ],
+        "quantity": 1
+      },
+      {
+        "id": "ram-corsair-64gb-ddr5-5600",
+        "category": "ram",
+        "name": "Corsair Vengeance 64GB DDR5",
+        "brand": "Corsair",
+        "price": 2790,
+        "image": "",
+        "specs": [
+          "64GB",
+          "DDR5",
+          "5600MHz"
+        ],
+        "quantity": 1
+      },
+      {
+        "id": "cooling-hyper-212",
+        "category": "cooling",
+        "name": "Cooler Master Hyper 212",
+        "brand": "Cooler Master",
+        "price": 390,
+        "image": "",
+        "specs": [
+          "Air cooler",
+          "120mm fan",
+          "Budget"
+        ],
+        "quantity": 1
+      },
+      {
+        "id": "case-nzxt-h5-flow",
+        "category": "case",
+        "name": "NZXT H5 Flow",
+        "brand": "NZXT",
+        "price": 1090,
+        "image": "",
+        "specs": [
+          "ATX",
+          "Mid tower",
+          "High airflow"
+        ],
+        "quantity": 1
+      }
+    ],
+    "totalPrice": 11240,
+    "createdAt": "2026-05-31T16:52:48.575Z"
   }
 ]
