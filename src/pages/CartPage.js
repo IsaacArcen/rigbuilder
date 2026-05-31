@@ -23,7 +23,12 @@ function CartPage() {
         clearBuild
     } = useBuild();
 
+
     const selectedItems = Object.entries(build).filter(([, product]) => product);
+
+    const totalQuantity = selectedItems.reduce((sum, [, product]) => {
+        return sum + product.quantity;
+    }, 0);
 
     const totalPrice = selectedItems.reduce((sum, [, product]) => {
         return sum + product.price * product.quantity;
@@ -108,7 +113,7 @@ return (
 
                     <div className="cart-summary__row">
                         <span>Components</span>
-                        <strong>{selectedItems.length}</strong>
+                        <strong>{totalQuantity}</strong>
                     </div>
 
                     <div className="cart-summary__row">
