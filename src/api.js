@@ -79,7 +79,7 @@ export async function login({ username, password }) {
 
 //inloggad användare
 export async function getCurrentUser() {
-    return request("users/current", {
+    return request("/users/current", {
         method: "GET",
     });
 }
@@ -98,7 +98,7 @@ export async function getProducts(category) {
 
 //produkt via ID
 export async function getProductsById(id) {
-    return request(`/products${id}`, {
+    return request(`/products/${id}`, {
         method: "GET",
     });
 }
@@ -115,7 +115,7 @@ export async function createOrder(orderData) {
 
 //hämta alla orders
 export async function getOrders() {
-    return request("orders", {
+    return request("/orders", {
         method: "GET",
     });
 }
