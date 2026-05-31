@@ -8,7 +8,7 @@ import { useBuild } from "../context/BuildContext";
 function FavoritesPage() {
     const navigate = useNavigate();
     const { authed } = useAuth();
-    const { favorites, toggleFavorites } = useFavorites();
+    const { favorites, toggleFavorite } = useFavorites();
     const { selectComponent } = useBuild();
 
     //här sparas  hela produktobjekten efter hämtats från backend
@@ -90,7 +90,7 @@ if (!authed) {
                         <div className="favorite-card__actions">
                             <button
                                 type="button"
-                                onClick={() => toggleFavorites(product.id)}
+                                onClick={() => toggleFavorite(product.id)}
                                 >
                                     Remove
                                 </button>
