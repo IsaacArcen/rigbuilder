@@ -31,4 +31,11 @@ export function FavoritesProvider({ children }) {
 
         loadFavorites();
     }, [authed]);
+
+    //om produkt redan är favorite
+    const isFavorite = (productId) => {
+        return favorites.includes(productId);
+    };
+
+    
 }
