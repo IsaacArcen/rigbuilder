@@ -70,6 +70,8 @@ return (
 
                             <div className="cart-item__side">
                                 <strong>{product.price * product.quantity} kr</strong>
+                                <div className="car.item__actions">
+                                    <div className="cart-item__quantity">
                                     <button
                                         type="button"
                                         aria-label={`Decrease quantity of ${product.name}`}
@@ -95,6 +97,8 @@ return (
                                 >
                                     Remove
                                 </button>
+                                </div>
+                                </div>
                         </article>
                     ))}
                 </div>
