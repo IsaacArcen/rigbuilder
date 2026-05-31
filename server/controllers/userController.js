@@ -154,14 +154,15 @@ const getFavorites = asyncHandler(async (req, res) => {
 // @route POST /api/users/favorites
 // @access private
 const addFavorite = asyncHandler(async (req, res) => {
+    //skickar produkternas id från frontend till req.body
     const { productId } = req.body;
-    const users = readUsers();
 
     if (!productId) {
         res.status(400);
         throw new Error("Product id is required");
     }
 
+    const users = readUsers();
     const user = users.find((item) => item.id === req.user.id);
 
     if (!user) {
@@ -169,8 +170,14 @@ const addFavorite = asyncHandler(async (req, res) => {
         throw new Error("User not found");
     }
 
-    //skapar en array user
-})
+    //om produkt redan är sparad
+    if (!user.favorites.includes(productId)) {
+        user.favorites.push(productId);
+        writeUsers(users);
+    }
+
+    res.status(200).json(user.favorites);
+});
 
 module.exports = {
     registerUser,
