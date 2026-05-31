@@ -71,4 +71,6 @@ export function FavoritesProvider({ children }) {
     );
 }
 
-export function useFavorites()
+export function useFavorites() {
+    return useContext(FavoritesContext);
+}
