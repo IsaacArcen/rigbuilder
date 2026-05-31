@@ -130,6 +130,17 @@ export async function getFavorites() {
     });
 }
 
+//lägg till produkt i favorites
+// POST /api/users/favorites
+export async function addFavorite(productId) {
+    return request("/users/favorites", {
+        method: "POST",
+        body: JSON.stringify({
+            productId,
+        }),
+    });
+}
+
 //AUTH FUNCTIONS
 
 //sparar token efter login
