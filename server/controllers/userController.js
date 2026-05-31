@@ -131,6 +131,27 @@ const currentUser = asyncHandler(async (req, res) => {
     res.status(200).json(req.user);
 });
 
+// @desc Get logged in user favorites
+// @route GET /api/users/favorites
+// @access private
+const getFavorites = asyncHandler(async (req, res) => {
+    const users = readUsers();
+
+    //req.user från validateTokenHandler
+    const user = users.find((item) => item.id === req.user.id);
+
+    if (!user) {
+        res.status(404);
+        throw new Error("User not found");
+    }
+
+    res.status(200).json(user.favorites || []);
+});
+
+// @desc Add product to favorites
+// @route POST /api/users/favorites
+// @access private
+
 module.exports = {
     registerUser,
     loginUser,
