@@ -5,6 +5,9 @@ const {
     registerUser,
     loginUser,
     currentUser,
+    getFavorites,
+    addFavorite,
+    removeFavorite,
 } = require("../controllers/userController");
 
 const validateToken = require("../middleware/validateTokenHandler");
