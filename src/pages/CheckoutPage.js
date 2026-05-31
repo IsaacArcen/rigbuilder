@@ -23,7 +23,7 @@ function CheckoutPage() {
     const selectedItems = Object.entries(build).filter(([, product]) => product);
 
     const totalPrice = selectedItems.reduce((sum, [, product]) => {
-        return sum + product.price;
+        return sum + product.price * product.quantity;
     }, 0);
 
     const [formData, setFormData] = useState({
@@ -190,7 +190,7 @@ function CheckoutPage() {
                                 <div className="checkout-summary__item" key={category}>
                                     <span>{componentLabels[category] || category}</span>
                                     <strong>{product.name}</strong>
-                                    <small>{product.price} kr</small>
+                                    <small>{product.quantity} x {product.price} kr</small>
                                 </div>
                             ))}
                         </div>
