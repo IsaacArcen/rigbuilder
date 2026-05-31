@@ -15,12 +15,18 @@ const componentLabels = {
 // Cartpage visar användarens komponenter innan checkout
 
 function CartPage() {
-    const {build, removeComponent, clearBuild} = useBuild();
+    const {
+        build, 
+        removeComponent,
+        increaseQuantity,
+        decreaseQuantity, 
+        clearBuild
+    } = useBuild();
 
     const selectedItems = Object.entries(build).filter(([, product]) => product);
 
     const totalPrice = selectedItems.reduce((sum, [, product]) => {
-        return sum + product.price;
+        return sum + product.price * product.quantity;
     }, 0);
 
 
@@ -63,7 +69,25 @@ return (
                             </div>
 
                             <div className="cart-item__side">
-                                <strong>{product.price} kr</strong>
+                                <strong>{product.price * product.quantity} kr</strong>
+                                    <button
+                                        type="button"
+                                        aria-label={`Decrease quantity of ${product.name}`}
+                                        onClick={() => decreaseQuantity(category)}
+                                        >
+                                            -
+                                        </button>
+
+                                        <span>{product.quantity}</span>
+
+                                        <button
+                                            type="button"
+                                            aria-label={`Increase quantity of ${product.name}`}
+                                            onClick={() => increaseQuantity(category)}
+                                            >
+                                                +
+                                            </button>
+                                            </div>
 
                                 <button
                                 type="button"
@@ -71,7 +95,6 @@ return (
                                 >
                                     Remove
                                 </button>
-                            </div>
                         </article>
                     ))}
                 </div>
