@@ -14,4 +14,18 @@ function FavoritesPage() {
     //här sparas  hela produktobjekten efter hämtats från backend
     const [products, setProducts] = useState([]);
     const [errorMessage, setErrorMessage] = useState("");
+
+    //hämtar alla produkter
+    useEffect(() => {
+        const loadProducts = async () => {
+            try {
+                const data = await getProducts();
+                setProducts(data);
+            } catch (error) {
+                setErrorMessage(error.message);
+            }
+        };
+
+        loadProducts();
+    }, []);
 }
