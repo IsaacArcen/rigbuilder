@@ -4,7 +4,7 @@ import { componentCategories } from "../data/componentCategories";
 import { useNavigate } from "react-router-dom";
 import { useBuild } from "../context/BuildContext";
 import { useAuth } from "../AuthContext";
-import { useFavorites } from "../FavoritesContext";
+import { useFavorites } from "../context/FavoritesContext";
 
 //sida som kan användas för alla komponentsidor
 //hömtar produkterna från backend och filtrerar efter kategori
