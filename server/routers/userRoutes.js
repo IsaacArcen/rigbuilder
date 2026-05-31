@@ -21,4 +21,11 @@ router.post("/login", loginUser);
 //skyddad route krväver JWT-token
 router.get("/current", validateToken, currentUser);
 
+//alla favorites routes
+router.get("/favorites", validateToken, getFavorites);
+
+router.post("/favorites", validateToken, addFavorite);
+
+router.delete("/favorites", validateToken, removeFavorite);
+
 module.exports = router;
