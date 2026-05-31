@@ -63,5 +63,70 @@
     ],
     "totalPrice": 9980,
     "createdAt": "2026-05-25T21:08:54.980Z"
+  },
+  {
+    "id": "order-1780228999687",
+    "customer": {
+      "name": "gasgas",
+      "email": "gagaga@gmail.com",
+      "phone": "553125213512",
+      "paymentMethod": "swish"
+    },
+    "items": [
+      {
+        "id": "cpu-ryzen-5-5600",
+        "category": "cpu",
+        "name": "Ryzen 5 5600",
+        "brand": "AMD",
+        "price": 1390,
+        "image": "",
+        "specs": [
+          "6 cores",
+          "12 threads",
+          "AM4"
+        ]
+      },
+      {
+        "id": "gpu-rtx-4060",
+        "category": "gpu",
+        "name": "GeForce RTX 4060",
+        "brand": "NVIDIA",
+        "price": 3690,
+        "image": "",
+        "specs": [
+          "8GB GDDR6",
+          "PCIe 4.0",
+          "1080p gaming"
+        ]
+      },
+      {
+        "id": "motherboard-x670e-aorus-elite",
+        "category": "motherboard",
+        "name": "Gigabyte X670E Aorus Elite AX",
+        "brand": "Gigabyte",
+        "price": 3490,
+        "image": "",
+        "specs": [
+          "AM5",
+          "ATX",
+          "DDR5"
+        ]
+      },
+      {
+        "id": "ram-corsair-16gb-ddr4-3200",
+        "category": "ram",
+        "name": "Corsair Vengeance LPX 16GB",
+        "brand": "Corsair",
+        "price": 590,
+        "image": "",
+        "specs": [
+          "16GB",
+          "DDR4",
+          "3200MHz"
+        ]
+      }
+    ],
+    "totalPrice": 9160,
+    "createdAt": "2026-05-31T12:03:19.687Z"
   }
 ]

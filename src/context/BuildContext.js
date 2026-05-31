@@ -32,7 +32,10 @@ export function BuildProvider({ children }) {
     const selectComponent = (category, product) => {
         setBuild((currentBuild) => ({
             ...currentBuild,
-            [category]: product,
+            [category]: {
+                ...product,
+                quantity: 1,
+            },
         }));
     };
 
