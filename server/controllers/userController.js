@@ -146,8 +146,8 @@ const getFavorites = asyncHandler(async (req, res) => {
         res.status(404);
         throw new Error("User not found");
     }
-
-    res.status(200).json(user.favorites || []);
+    //skickar array med produkterna
+    res.status(200).json(user.favorites);
 });
 
 // @desc Add product to favorites
