@@ -36,6 +36,14 @@ const createOrder = asyncHandler(async (req, res) => {
         throw new Error("Missing customer details");
     }
 
+    if (
+        customer.paymentMethod !== "card" &&
+        customer.paymentMethod !== "swish"
+    ) {
+        res.status(400);
+        throw new Error("Invalid payment method.");
+    }
+
     if (!Array.isArray(items) || items.length === 0) {
         res.status(400);
         throw new Error("Order must contain at least one item");
