@@ -11,7 +11,7 @@ import gpuImage from "../assets/images/categories/gpu.png";
 import cpuImage from "../assets/images/categories/cpu.png";
 import motherboardImage from "../assets/images/categories/motherboard.png";
 import ramImage from "../assets/images/categories/ram.png";
-import storageImage from "../assets/images/categories/storage.jpg";
+import storageImage from "../assets/images/categories/storage.png";
 import coolingImage from "../assets/images/categories/cooling.png";
 import caseImage from "../assets/images/categories/case.png";
 import extraImage from "../assets/images/categories/extra.png";

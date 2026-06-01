@@ -266,5 +266,116 @@
     ],
     "totalPrice": 11240,
     "createdAt": "2026-05-31T16:52:48.575Z"
+  },
+  {
+    "id": "order-1780309225433",
+    "customer": {
+      "name": "sali",
+      "email": "sali@gmail.com",
+      "phone": "43143214",
+      "paymentMethod": "card"
+    },
+    "items": [
+      {
+        "id": "cpu-i7-14700k",
+        "category": "cpu",
+        "name": "Core i7-14700K",
+        "brand": "Intel",
+        "price": 4990,
+        "image": "",
+        "specs": [
+          "20 cores",
+          "28 threads",
+          "LGA1700"
+        ],
+        "quantity": 1
+      },
+      {
+        "id": "gpu-rx-7900-xtx",
+        "category": "gpu",
+        "name": "Radeon RX 7900 XTX",
+        "brand": "AMD",
+        "price": 11990,
+        "image": "",
+        "specs": [
+          "24GB GDDR6",
+          "PCIe 4.0",
+          "4K gaming"
+        ],
+        "quantity": 1
+      },
+      {
+        "id": "motherboard-b760-plus",
+        "category": "motherboard",
+        "name": "ASUS TUF Gaming B760-Plus WiFi",
+        "brand": "ASUS",
+        "price": 2090,
+        "image": "",
+        "specs": [
+          "LGA1700",
+          "ATX",
+          "DDR5"
+        ],
+        "quantity": 1
+      },
+      {
+        "id": "ram-gskill-32gb-ddr5-6000",
+        "category": "ram",
+        "name": "G.Skill Trident Z5 32GB",
+        "brand": "G.Skill",
+        "price": 1790,
+        "image": "",
+        "specs": [
+          "32GB",
+          "DDR5",
+          "6000MHz"
+        ],
+        "quantity": 2
+      },
+      {
+        "id": "storage-wd-sn850x-2tb",
+        "category": "storage",
+        "name": "WD Black SN850X 2TB",
+        "brand": "Western Digital",
+        "price": 2390,
+        "image": "",
+        "specs": [
+          "2TB",
+          "NVMe SSD",
+          "PCIe 4.0"
+        ],
+        "quantity": 1
+      },
+      {
+        "id": "cooling-h150i",
+        "category": "cooling",
+        "name": "Corsair iCUE H150i Elite",
+        "brand": "Corsair",
+        "price": 2290,
+        "image": "",
+        "specs": [
+          "Liquid cooler",
+          "360mm radiator",
+          "RGB"
+        ],
+        "quantity": 2
+      },
+      {
+        "id": "case-hyte-y60",
+        "category": "case",
+        "name": "HYTE Y60",
+        "brand": "HYTE",
+        "price": 2290,
+        "image": "",
+        "specs": [
+          "ATX",
+          "Mid tower",
+          "Panoramic glass"
+        ],
+        "quantity": 1
+      }
+    ],
+    "totalPrice": 31910,
+    "createdAt": "2026-06-01T10:20:25.433Z"
   }
 ]

@@ -13,7 +13,9 @@
     "password": "$2b$10$UNmUdJ5ZS2P5eXA76ImND.YHsWKnCRHbtbd.8IKAfTIyxy56Sf3NW",
     "favorites": [
       "gpu-rtx-4060",
-      "motherboard-x670e-aorus-elite"
+      "motherboard-x670e-aorus-elite",
+      "cpu-ryzen-5-5600",
+      "cpu-ryzen-7-7800x3d"
     ]
   }
 ]
