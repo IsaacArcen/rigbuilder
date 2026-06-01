@@ -377,5 +377,130 @@
     ],
     "totalPrice": 31910,
     "createdAt": "2026-06-01T10:20:25.433Z"
+  },
+  {
+    "id": "order-1780342323486",
+    "customer": {
+      "name": "eliasvks",
+      "email": "eliasvks@gmail.com",
+      "phone": "531532151",
+      "paymentMethod": "swish"
+    },
+    "items": [
+      {
+        "id": "cpu-ryzen-7-7800x3d",
+        "category": "cpu",
+        "name": "Ryzen 7 7800X3D",
+        "brand": "AMD",
+        "price": 4490,
+        "image": "",
+        "specs": [
+          "8 cores",
+          "16 threads",
+          "3D V-Cache"
+        ],
+        "quantity": 1
+      },
+      {
+        "id": "gpu-rtx-4070-super",
+        "category": "gpu",
+        "name": "GeForce RTX 4070 Super",
+        "brand": "NVIDIA",
+        "price": 7490,
+        "image": "",
+        "specs": [
+          "12GB GDDR6X",
+          "PCIe 4.0",
+          "1440p gaming"
+        ],
+        "quantity": 1
+      },
+      {
+        "id": "motherboard-b650-tomahawk",
+        "category": "motherboard",
+        "name": "MSI MAG B650 Tomahawk WiFi",
+        "brand": "MSI",
+        "price": 2590,
+        "image": "",
+        "specs": [
+          "AM5",
+          "ATX",
+          "DDR5"
+        ],
+        "quantity": 1
+      },
+      {
+        "id": "ram-kingston-32gb-ddr5-6000",
+        "category": "ram",
+        "name": "Kingston Fury Beast 32GB DDR5",
+        "brand": "Kingston",
+        "price": 1590,
+        "image": "",
+        "specs": [
+          "32GB",
+          "DDR5",
+          "6000MHz"
+        ],
+        "quantity": 1
+      },
+      {
+        "id": "storage-kingston-nv2-1tb",
+        "category": "storage",
+        "name": "Kingston NV2 1TB",
+        "brand": "Kingston",
+        "price": 690,
+        "image": "",
+        "specs": [
+          "1TB",
+          "NVMe SSD",
+          "PCIe 4.0"
+        ],
+        "quantity": 1
+      },
+      {
+        "id": "cooling-hyper-212",
+        "category": "cooling",
+        "name": "Cooler Master Hyper 212",
+        "brand": "Cooler Master",
+        "price": 390,
+        "image": "",
+        "specs": [
+          "Air cooler",
+          "120mm fan",
+          "Budget"
+        ],
+        "quantity": 1
+      },
+      {
+        "id": "extra-corsair-rm850x",
+        "category": "extra",
+        "name": "Corsair RM850x",
+        "brand": "Corsair",
+        "price": 1590,
+        "image": "",
+        "specs": [
+          "850W",
+          "80+ Gold",
+          "Modular PSU"
+        ],
+        "quantity": 1
+      },
+      {
+        "id": "case-nzxt-h7-flow",
+        "category": "case",
+        "name": "NZXT H7 Flow",
+        "brand": "NZXT",
+        "price": 1490,
+        "image": "",
+        "specs": [
+          "ATX",
+          "Mid tower",
+          "High airflow"
+        ],
+        "quantity": 1
+      }
+    ],
+    "totalPrice": 20320,
+    "createdAt": "2026-06-01T19:32:03.486Z"
   }
 ]
