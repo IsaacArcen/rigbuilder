@@ -7,7 +7,6 @@ const {
 } = require("../controllers/orderController");
 
 //Route för api/orders
-//GET hämtar alla orders.
 //POST skapar ny order.
 router.route("/").post(createOrder);
 
