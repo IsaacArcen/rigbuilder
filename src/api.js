@@ -77,13 +77,6 @@ export async function login({ username, password }) {
     });
 }
 
-//inloggad användare
-export async function getCurrentUser() {
-    return request("/users/current", {
-        method: "GET",
-    });
-}
-
 //PRODUCT REQUESTS
 
 //Hämta produkter
@@ -92,13 +85,6 @@ export async function getProducts(category) {
     const query = category ? `?category=${category}` : "";
 
     return request(`/products${query}`, {
-        method: "GET",
-    });
-}
-
-//produkt via ID
-export async function getProductsById(id) {
-    return request(`/products/${id}`, {
         method: "GET",
     });
 }
@@ -171,9 +157,7 @@ export function logout() {
 export default {
     register,
     login,
-    getCurrentUser,
     getProducts,
-    getProductsById,
     createOrder,
     getFavorites,
     addFavorite,
