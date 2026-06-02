@@ -2,21 +2,8 @@
 //Kollar igenom data för nya orders
 // Sparar datan från orders
 const asyncHandler = require("express-async-handler");
-const fs = require("fs");
-const path = require("path");
+const Order = require("../models/orderModel");
 
-const ordersFilePath = path.join(__dirname, "../data/orders.json");
-
-//Läser alla orders i JSON-filen
-const readOrders = () => {
-    const orderData = fs.readFileSync(ordersFilePath, "utf8");
-    return JSON.parse(orderData);
-};
-
-//Skriver uppdaterade orders till JSON.filen
-const writeOrders = (orders) => {
-    fs.writeFileSync(ordersFilePath, JSON.stringify(orders, null, 2));
-};
 
 // @desc Create a new order
 // @route POST /api/orders
@@ -49,21 +36,14 @@ const createOrder = asyncHandler(async (req, res) => {
         throw new Error("Order must contain at least one item");
     }
 
-    const orders = readOrders();
     //skapa ny order
     //date.now() enkelt unikt id
-    const newOrder = {
-        id: `order-${Date.now()}`,
+    const newOrder = await Order.create({
         customer,
         items,
         totalPrice,
-        createdAt: new Date().toISOString(),
-    };
+    });
 
-    //lägger till nya order i listan
-    orders.push(newOrder);
-    writeOrders(orders);
-    //201 = "created"
     res.status(201).json(newOrder);
 });
 
