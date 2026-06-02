@@ -70,13 +70,13 @@ function CheckoutPage() {
 
         try {
             //createOrder skickar orderData till backend och får tillbaka orderId
-            const createOrder = await createOrder(orderData);
+            const createdOrder = await createOrder(orderData);
 
             clearBuild();
 
             navigate("/confirmation", {
                 state: {
-                    order: createOrder,
+                    order: createdOrder,
                 },
             });
         } catch (error) {
