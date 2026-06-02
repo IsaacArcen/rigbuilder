@@ -24,7 +24,7 @@ function Builder() {
   const selectedProducts = Object.values(build).filter(Boolean);
 
   const totalPrice = selectedProducts.reduce((sum, product) => {
-    return sum + product.price;
+    return sum + product.price * product.quantity;
   }, 0);
 
   return (
