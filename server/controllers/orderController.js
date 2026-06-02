@@ -70,5 +70,4 @@ const createOrder = asyncHandler(async (req, res) => {
 //Exporta så orderRoutes.js kan använda funktionerna
 module.exports = {
     createOrder,
-    getOrders,
 };
