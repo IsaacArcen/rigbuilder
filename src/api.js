@@ -113,13 +113,6 @@ export async function createOrder(orderData) {
     });
 }
 
-//hämta alla orders
-export async function getOrders() {
-    return request("/orders", {
-        method: "GET",
-    });
-}
-
 //FAVORITE REQUESTS
 
 //Hämta favorit produkterna
@@ -182,7 +175,6 @@ export default {
     getProducts,
     getProductsById,
     createOrder,
-    getOrders,
     getFavorites,
     addFavorite,
     removeFavorite,
