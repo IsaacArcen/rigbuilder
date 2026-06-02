@@ -1,28 +1,14 @@
 const asyncHandler = require("express-async-handler");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const fs = require("fs");
-const path = require("path");
-
-const usersFilePath = path.join(__dirname, "../data/users.json");
-
-//läser användare från json
-const readUsers = () => {
-    const usersData = fs.readFileSync(usersFilePath, "utf8");
-    return JSON.parse(usersData);
-};
-
-//skriver användare till json-filen
-const writeUsers = (users) => {
-    fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
-};
+const User = require("../models/userModel");
 
 //skapar JWT token
 const createAccessToken = (user) => {
     return jwt.sign(
     {
         user: {
-            id: user.id,
+            id: user._id,
             username: user.username,
             email: user.email,
         },
@@ -33,21 +19,17 @@ const createAccessToken = (user) => {
 };
 
 const ensureDefaultUser = async () => {
-    const users = readUsers();
-    const defaultUserExists = users.some((user) => user.username === "user");
+    const defaultUser = await User.findOne({ username: "user" });
 
-    if (!defaultUserExists) {
+    if (!defaultUser) {
         const hashedPassword = await bcrypt.hash("password", 10);
 
-        users.push({
-            id: "user-1",
+        await User.create({
             username: "user",
             email: "user@example.com",
             password: hashedPassword,
             favorites: [],
         });
-
-        writeUsers(users);
     }
 };
 
@@ -62,32 +44,26 @@ const registerUser = asyncHandler(async (req, res) => {
         throw new Error("Please fill in all fields.");
     }
 
-    const users = readUsers();
-
-    const userExists = users.some(
-        (user) => user.username === username || user.email === email
-    );
+    const userExists = await User.findOne({
+        $or: [{ username }, { email }],
+    });
 
     if (userExists) {
         res.status(400);
-        throw new Error("User already exists");
+        throw new Error("Username or email already exists.");
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    const newUser =  {
-        id: `user-${Date.now()}`,
+    const newUser =  await User.create({
         username,
         email,
         password: hashedPassword,
         favorites: [],
-    };
-
-    users.push(newUser);
-    writeUsers(users);
+    });
 
     res.status(201).json({
-        id: newUser.id,
+        id: newUser._id,
         username: newUser.username,
         email: newUser.email,
     });
@@ -106,8 +82,7 @@ const loginUser = asyncHandler(async (req, res) => {
         throw new Error("Please enter username and password");
     }
 
-    const users = readUsers();
-    const user = users.find((item) => item.username === username);
+    const user = await User.findOne({ username });
 
     if (!user) {
         res.status(401);
@@ -137,10 +112,8 @@ const currentUser = asyncHandler(async (req, res) => {
 // @route GET /api/users/favorites
 // @access private
 const getFavorites = asyncHandler(async (req, res) => {
-    const users = readUsers();
-
     //req.user från validateTokenHandler
-    const user = users.find((item) => item.id === req.user.id);
+    const user = await User.findById(req.user.id);
 
     if (!user) {
         res.status(404);
@@ -162,8 +135,7 @@ const addFavorite = asyncHandler(async (req, res) => {
         throw new Error("Product id is required");
     }
 
-    const users = readUsers();
-    const user = users.find((item) => item.id === req.user.id);
+    const user = await User.findById(req.user.id);
 
     if (!user) {
         res.status(404);
@@ -173,7 +145,7 @@ const addFavorite = asyncHandler(async (req, res) => {
     //om produkt redan är sparad
     if (!user.favorites.includes(productId)) {
         user.favorites.push(productId);
-        writeUsers(users);
+        await user.save();
     }
 
     res.status(200).json(user.favorites);
@@ -183,9 +155,9 @@ const addFavorite = asyncHandler(async (req, res) => {
 // @route DELETE /api/users/favorites/:productId
 // @access private
 const removeFavorite = asyncHandler(async (req, res) => {
-    const users = readUsers();
-    const user = users.find((item) => item.id === req.user.id);
 
+    const user = await User.findById(req.user.id);
+    
     if (!user) {
         res.status(404);
         throw new Error("User not found");
@@ -196,7 +168,7 @@ const removeFavorite = asyncHandler(async (req, res) => {
         (productId) => productId !== req.params.productId
     );
 
-    writeUsers(users);
+    await user.save();
 
     //skickar den uppdaterade listan
     res.status(200).json(user.favorites);
