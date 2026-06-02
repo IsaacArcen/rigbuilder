@@ -112,7 +112,7 @@ function Navbar() {
                                     <span>{componentLabels[category] || category}</span>
                                     <h3>{product.name}</h3>
                                     <p>
-                                        {product.price}</p>
+                                        {product.quantity} x {product.price} kr</p>
                                 </div>
 
                                 <button
