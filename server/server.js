@@ -10,6 +10,10 @@ const dotenv = require("dotenv");
 //Läser in miljövariabler från .env-filen
 dotenv.config();
 
+//importera databasanslutning
+const connectDB = require("./config/dbConnection");
+connectDB();
+
 //Skapar Express-appen
 const app = express();
 
