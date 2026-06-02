@@ -1,7 +1,7 @@
 const asyncHandler = require("express-async-handler");
 
 //Hämtar produkterna från data/products.json
-const products = require("../data/products.json");
+const products = require("../models/productModel");
 
 // @desc    Get all products, or filter by category
 // @route   GET /api/products
@@ -9,13 +9,13 @@ const products = require("../data/products.json");
 const getProducts = asyncHandler(async (req, res) => {
     const { category } = req.query;
 
-    if (category) {
-        const filteredProducts = products.filter(
-            (product) => product.category.toLowerCase() === category.toLowerCase()
-        );
+   
+//om category finns hämtas endast matchande produkter
+const filter = category
+    ? { category: category.toLowerCase() }
+    : {};
 
-        return res.status(200).json(filteredProducts);
-    }
+    const products = await Product.filter(filter);
 
     res.status(200).json(products);
 });
