@@ -502,5 +502,32 @@
     ],
     "totalPrice": 20320,
     "createdAt": "2026-06-01T19:32:03.486Z"
+  },
+  {
+    "id": "order-1780391107862",
+    "customer": {
+      "name": "gsdag",
+      "email": "gdsag@gmail.com",
+      "phone": "53125321",
+      "paymentMethod": "swish"
+    },
+    "items": [
+      {
+        "id": "gpu-rtx-4060",
+        "category": "gpu",
+        "name": "GeForce RTX 4060",
+        "brand": "NVIDIA",
+        "price": 3690,
+        "image": "",
+        "specs": [
+          "8GB GDDR6",
+          "PCIe 4.0",
+          "1080p gaming"
+        ],
+        "quantity": 1
+      }
+    ],
+    "totalPrice": 3690,
+    "createdAt": "2026-06-02T09:05:07.862Z"
   }
 ]
