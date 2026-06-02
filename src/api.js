@@ -154,7 +154,7 @@ export function logout() {
 
 //exporterra alla funktioner som ett objekt
 //gör det möjligt att importera hela API:t enklare
-export default {
+const api = {
     register,
     login,
     getProducts,
@@ -166,3 +166,4 @@ export default {
     logout,
     isAuthenticated,
 };
+export default api;
