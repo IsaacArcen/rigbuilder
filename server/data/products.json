@@ -18,15 +18,6 @@
     "specs": ["8GB GDDR6", "PCIe 4.0", "1080p high refresh"]
   },
   {
-    "id": "gpu-rtx-4070-super",
-    "category": "gpu",
-    "name": "GeForce RTX 4070 Super",
-    "brand": "NVIDIA",
-    "price": 7490,
-    "image": "",
-    "specs": ["12GB GDDR6X", "PCIe 4.0", "1440p gaming"]
-  },
-  {
     "id": "gpu-rtx-4070-ti-super",
     "category": "gpu",
     "name": "GeForce RTX 4070 Ti Super",
