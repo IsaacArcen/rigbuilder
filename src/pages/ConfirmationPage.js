@@ -44,7 +44,7 @@ function ConfirmationPage() {
 
                 <div className="confirmation-card__meta">
                     <span>Order ID</span>
-                    <strong>{order.id}</strong>
+                    <strong>{order._id}</strong>
                 </div>
 
                 <div className="confirmation-card__items">
