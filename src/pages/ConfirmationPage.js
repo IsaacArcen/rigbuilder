@@ -42,7 +42,7 @@ function ConfirmationPage() {
                     Your order has been created successfully. Below is a summary of your order details:
                 </p>
 
-                <div className="confirmation-card__details">
+                <div className="confirmation-card__meta">
                     <span>Order ID</span>
                     <strong>{order.id}</strong>
                 </div>
