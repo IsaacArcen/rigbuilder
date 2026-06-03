@@ -10,7 +10,7 @@ const getProducts = asyncHandler(async (req, res) => {
     const { category } = req.query;
 
    
-//om category finns hämtas endast matchande produkter
+//dynamiskt filter så samma ENDPOINT kan hämta alla produkter och specifik kategori (ifall vidarutveckling)
 const filter = category
     ? { category: category.toLowerCase() }
     : {};

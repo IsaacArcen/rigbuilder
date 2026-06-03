@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useBuild } from "../context/BuildContext";
 import { useAuth } from "../context/AuthContext";
 import { useFavorites } from "../context/FavoritesContext";
+import { getProducts } from "../api";
 
 //bilder
 import gpuImage from "../assets/images/categories/gpu.png";
@@ -61,14 +62,7 @@ function ComponentPage() {
     setLoading(true);
     setErrorMessage("");
 
-    fetch(`http://localhost:5000/api/products?category=${category}`)
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error("Could not fetch products");
-        }
-
-        return res.json();
-      })
+    getProducts(category)
       .then((data) => {
         setProducts(data);
         setLoading(false);

@@ -15,6 +15,7 @@ const emptyBuild = {
 };
 
 export function BuildProvider({ children }) {
+    
     const [build, setBuild] = useState(() => {
         const savedBuild = localStorage.getItem("build");
 
@@ -25,10 +26,12 @@ export function BuildProvider({ children }) {
         return emptyBuild;
     });
 
+    //useEffect för att automatiskt spara build-state i localStorage när build förändras.
     useEffect(() => {
         localStorage.setItem("build", JSON.stringify(build));
     }, [build]);
 
+    //uppdateras rätt slot i build-objektet
     const selectComponent = (category, product) => {
         setBuild((currentBuild) => ({
             ...currentBuild,
