@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { componentCategories } from "../data/componentCategories";
 import { useNavigate } from "react-router-dom";
 import { useBuild } from "../context/BuildContext";
-import { useAuth } from "../AuthContext";
+import { useAuth } from "../context/AuthContext";
 import { useFavorites } from "../context/FavoritesContext";
 
 //bilder
