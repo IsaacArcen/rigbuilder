@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
-import { isAuthenticated, saveToken, logout as apiLogout } from "./api";
+import { isAuthenticated, saveToken, logout as apiLogout } from "../api";
 
 //skapar context-objektet
 //null är standardvärdet innan Provider är på plats
