@@ -70,7 +70,7 @@ CONNECTION_STRING=mongodb+srv://admin:<db_password>@rigbuildercluster.f60bl9v.mo
 ACCESS_TOKEN_SECRET=your_secret_key
 ```
 
-eplace `<db_password>` with the MongoDB database password provided separately.
+Replace `<db_password>` with the MongoDB database password provided separately.
 
 The backend uses `CONNECTION_STRING` to connect to MongoDB.
 
