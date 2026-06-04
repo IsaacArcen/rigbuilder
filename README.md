@@ -164,6 +164,12 @@ POST /api/orders
 
 ---
 
+---
+
+## Figma Design
+
+[View Figma Design - PCForge](https://www.figma.com/design/sAqnpMKiraGXgJLqqGbfwv/PCForge?node-id=2-69&p=f&t=PeSvP3qC87BGM1Ws-0)
+
 ## Notes
 
 The project requires both frontend and backend to be running at the same time.
