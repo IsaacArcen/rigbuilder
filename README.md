@@ -1,70 +1,173 @@
-# Getting Started with Create React App
+# RigBuilder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+RigBuilder is a full-stack web application where users can build their own custom PC by choosing different computer components. Users can browse products by category, select parts for their build, manage a cart, place an order, register, log in, and save favorite products.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Tech Stack
 
-### `npm start`
+### Frontend
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React
+- React Router
+- React Context for global state (Build, Auth & Favorites)
+- CSS (Custom responsive design)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Backend
 
-### `npm test`
+- Node.js
+- Express.js
+- MongoDB (Mongoose)
+- JWT Authentication
+- bcrypt
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```text
+RIGBUILDER/
+├── public/              # Public frontend files
+├── src/                 # React application
+│   ├── assets/          # Images and icons
+│   ├── components/      # Reusable components
+│   ├── context/         # Global state
+│   ├── data/            # Component category data
+│   └── pages/           # Application pages
+├── server/              # Express API
+│   ├── config/          # Database connection
+│   ├── controllers/     # API logic
+│   ├── middleware/      # Error handling and JWT validation
+│   ├── models/          # Mongoose models
+│   └── routers/         # API routes
+└── package.json         # Frontend scripts
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Getting Started
 
-### `npm run eject`
+## Prerequisites
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Node.js
+- npm
+- A MongoDB Atlas account and cluster
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Clone the repo
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+git clone https://github.com/IsaacArcen/rigbuilder.git
+cd rigbuilder
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Environment Variables
 
-## Learn More
+Create a `.env` file in the `server/` folder:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```env
+PORT=5000
+CONNECTION_STRING=mongodb+srv://admin:<db_password>@rigbuildercluster.f60bl9v.mongodb.net/?appName=RigBuilderCluster
+ACCESS_TOKEN_SECRET=your_secret_key
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+eplace `<db_password>` with the MongoDB database password provided separately.
 
-### Code Splitting
+The backend uses `CONNECTION_STRING` to connect to MongoDB.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Install Dependencies
 
-### Analyzing the Bundle Size
+```bash
+# Frontend
+npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# Backend
+cd server
+npm install
+```
 
-### Making a Progressive Web App
+## Login
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+You can register a new account in the application.
 
-### Advanced Configuration
+A default test account can also be created automatically when logging in:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```text
+Username: user
+Password: password
+```
 
-### Deployment
+## Run the App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Start the backend first:
 
-### `npm run build` fails to minify
+```bash
+cd server
+npm run dev
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Open a new terminal and start the frontend from the root folder:
+
+```bash
+npm start
+```
+
+The application will run on:
+
+- Frontend: http://localhost:3000
+- Backend: http://localhost:5000
+
+---
+
+## Main Features
+
+- Browse PC components by category
+- Search and filter products
+- Select components for a custom PC build
+- View selected components in the cart
+- Change quantity or remove selected components
+- Complete checkout and create an order
+- Register and log in
+- Save favorite products when logged in
+
+---
+
+## API Routes
+
+### Products
+
+```text
+GET /api/products
+GET /api/products?category=gpu
+```
+
+### Users
+
+```text
+POST /api/users/register
+POST /api/users/login
+GET /api/users/current
+```
+
+### Favorites
+
+```text
+GET /api/users/favorites
+POST /api/users/favorites
+DELETE /api/users/favorites/:productId
+```
+
+### Orders
+
+```text
+POST /api/orders
+```
+
+---
+
+## Notes
+
+The project requires both frontend and backend to be running at the same time.
+
+The `.env` file is not included in the repository. Add the MongoDB connection string and JWT secret manually before starting the backend.
+
+Do not upload `node_modules`, `.env` or `build` to GitHub.
